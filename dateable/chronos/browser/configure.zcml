@@ -103,7 +103,7 @@
     title="Day"
     for="dateable.chronos.interfaces.ICalendarEnhanced"
     action="day.html"
-    permission="zope2.View"
+    permission="dateable.chronos.ViewContent"
     />
 
   <browser:menuItem
@@ -111,7 +111,7 @@
     title="Week"
     for="dateable.chronos.interfaces.ICalendarEnhanced"
     action="week.html"
-    permission="zope2.View"
+    permission="dateable.chronos.ViewContent"
     />
           
   <browser:menuItem
@@ -119,7 +119,7 @@
     title="Month"
     for="dateable.chronos.interfaces.ICalendarEnhanced"
     action="month.html"
-    permission="zope2.View"
+    permission="dateable.chronos.ViewContent"
     />
           
   <browser:menuItem
@@ -127,7 +127,7 @@
     title="List"
     for="dateable.chronos.interfaces.ICalendarEnhanced"
     action="list.html"
-    permission="zope2.View"
+    permission="dateable.chronos.ViewContent"
     />
 
   <browser:menuItem
@@ -135,7 +135,7 @@
     title="Past"
     for="dateable.chronos.interfaces.ICalendarEnhanced"
     action="past.html"
-    permission="zope2.View"
+    permission="dateable.chronos.ViewContent"
     />
 
   <!-- The javascript navigator -->
@@ -143,7 +143,7 @@
   <browser:viewletManager
       name="chronos.navigation"
       provides=".interfaces.INavigation"
-      permission="zope2.View"
+      permission="dateable.chronos.ViewContent"
       />
   
   <browser:viewlet
@@ -151,7 +151,7 @@
       name="chronos.ajaxnavigation"
       manager=".interfaces.INavigation"
       class=".thumbnail.ThumbnailMonth"
-      permission="zope2.View"
+      permission="dateable.chronos.ViewContent"
       />
       
   <browser:resource
