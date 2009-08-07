@@ -1,0 +1,38 @@
+<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+<metal:block fill-slot="style_slot">
+    <style type="text/css" media="all" 
+        tal:content="string:@import url(${context/absolute_url}/chronos.css);" />
+</metal:block>
+
+<body>
+
+<div metal:fill-slot="body"
+     class="p4acalendar">
+  <div metal:use-macro="here/@@chronos_macros/calendar_view_tabs" />
+
+  <tal:block replace="structure view/render_filter"/>
+
+  <div class="eventlist">
+    <div tal:repeat="month options/months">
+      <h1>
+        <tal:block content="month/month_name" i18n:translate=""/>
+        <tal:block content="month/year"/>
+      </h1>
+      <div class="event" tal:repeat="event month/events">
+        <div class="event_details">
+          <tal:block content="month/month_name" i18n:translate=""/>
+          <tal:block content="event/day"/>
+        </div>
+        <div class="event_body">
+          <a class="event_title" tal:content="event/title"
+             tal:attributes="href event/url" /><br/>
+          <tal:block content="event/description"/>
+        </div>
+        <div style="clear: both;" />
+      </div>
+     </div>
+   </div>
+</div> <!-- end main fill slot -->
+
+</body>
+</html>

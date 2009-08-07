@@ -1,0 +1,14 @@
+<tal:block i18n:domain="chronos" tal:define="dummy view/calcInfo">
+  <td  class="weekThumbnailWeekNo">
+    <a tal:content="view/week" tal:attributes="href view/week" />
+  </td>
+  <tal:block repeat="day view/getDays">
+    <td tal:define="dayurl 
+        string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};"
+        class="weekThumbnailDay">
+      <a tal:attributes="href dayurl;
+         class python:view.getOccurrencesInDay(day) and 'hasEvent' or 'noEvent'"
+         tal:content="day/day" />
+    </td>
+  </tal:block>
+</tal:block>
