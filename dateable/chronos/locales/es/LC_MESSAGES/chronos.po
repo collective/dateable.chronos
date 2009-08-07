@@ -1,0 +1,995 @@
+# Gettext Message File for chronos.
+# Lennart Regebro <regebro@nuxeo.com>, 2005.
+# Lennart Regebro <regebro@gmail.com>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: CalZope\n"
+"POT-Creation-Date: 2005-10-02 14:40default\n"
+"PO-Revision-Date: 2006-10-10 18:10+0100\n"
+"Last-Translator: Jesús Martín <jesusmartin@lasalle.es>\n"
+"Language-Team: español <jesusmartin@lasalle.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: fr\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: latin9\n"
+"Domain: default\n"
+"X-Generator: KBabel 1.3.1\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+
+#.   <a href="action_needed_events.html">
+#.                 ${amount (tal replace="needs_action_amount")} events that need action</a>
+#: from ../skins/calendar.pt
+msgid "${amount} events that need action"
+msgstr "con ${amount} eventos en espera"
+
+#.   <a href="attended_events.html">
+#.                 ${amount (tal replace="attended_amount")}
+#.                 events you attend</a>
+#: from ../skins/calendar.pt
+msgid "${amount} events you attend"
+msgstr "participa en ${amount} eventos"
+
+#.   <a href="organized_events.html">
+#.                 ${amount (tal replace="organized_amount")} events you organize</a>
+#: from ../skins/calendar.pt
+msgid "${amount} events you organize"
+msgstr "organiza ${amount} eventos"
+
+#.   <block condition="recurrence/count">, for ${count (tal content="recurrence/count")} times</block>
+#: from ../skins/event.pt
+msgid ", for ${count} times"
+msgstr ", ${count} veces"
+
+#.   <block condition="recurrence/until">, until ${date (tal content="recurrence/until")}</block>
+#: from ../skins/event.pt
+msgid ", until ${date}"
+msgstr "hasta ${date}"
+
+#.   <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html" define="dayurl string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};">
+#.             +
+#.           </a>
+#.   <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
+#.               +
+#.             </a>
+#: from ../skins/day.pt ../skins/month.pt ../skins/week_macro.pt
+msgid "Add event"
+msgstr "Añadir evento"
+
+#.   <h1>Do you want to delete this event?</h1>
+#: from ../skins/eventdelete.pt
+msgid "Do you want to delete this event?"
+msgstr "¿Desea borrar este evento?"
+
+#.   <span>Edit calendar</span>
+#: from ../skins/calendar_edit.pt
+msgid "Edit calendar"
+msgstr "Editar calendario"
+
+#.   <h1 content="view/label" condition="view/label" define-slot="heading">Edit something</h1>
+#: from ../skins/edit.pt
+msgid "Edit something"
+msgstr "Editar algo"
+
+#.   <h1>Events you are attending</h1>
+#: from ../skins/attended_events.pt
+msgid "Events you are attending"
+msgstr "Eventos a los que asiste"
+
+#.   <h1>Events you organized</h1>
+#: from ../skins/organized_events.pt
+msgid "Events you organized"
+msgstr "Eventos que ha organizado"
+
+#.   <h1>Import iCalendar file</h1>
+#: from ../skins/ical_import.pt
+msgid "Import iCalendar file"
+msgstr "Importar calendario"
+
+#.   <p>Search in full names and titles of users.</p>
+#: from ../skins/meetinghelper.pt
+msgid "Search in full names and titles of users."
+msgstr "Buscar los usuarios por nombre"
+
+#.   <p condition="view/errors">
+#.             There are ${num_errors (tal content="python:len(view.errors)")} input errors.
+#.           </p>
+#: from ../skins/edit.pt
+msgid "There are ${num_errors} input errors."
+msgstr "Hay $(num_errors) errores de selección"
+
+#.   <input type="text" name="search_query" title="Use * to list all attendees (may take a very long time)" />
+#: from ../skins/meetinghelper.pt
+msgid "Use * to list all attendees (may take a very long time)"
+msgstr "Utilice * para mostrar la lista de participantes (puede llevar mucho tiempo)"
+
+#.   <block>
+#.             Week ${week (tal replace="thisweek")}
+#.           </block>
+#.   <block>
+#.           Week ${week (tal replace="view/week")}
+#.         </block>
+#: from ../skins/month.pt ../skins/week_macro.pt
+msgid "Week ${week}"
+msgstr "Semana ${week}"
+
+#.   <input type="submit" name="UPDATE_ADD" value="button_add" condition="results" />
+#.   <input condition="results" type="submit" name="UPDATE_ADD" value="button_add" />
+#: from ../skins/attendees.pt ../skins/meetinghelper.pt
+msgid "button_add"
+msgstr "Añadir"
+
+#.   <input type="submit" name="SUBMIT_CANCEL" value="button_cancel" />
+#: from ../skins/eventdelete.pt
+msgid "button_cancel"
+msgstr "Cancelar"
+
+#.   <input type="submit" name="UPDATE_STATUS" value="button_change" />
+#.   <input name="SUBMIT_EDIT" type="submit" class="standalone" value="button_change" />
+#.   <input type="submit" name="update_participation_status" value="button_change" />
+#: from ../skins/attendees.pt ../skins/calendar_edit.pt
+#: ../skins/eventlist_macro.pt
+msgid "button_change"
+msgstr "Cambiar"
+
+#.   <input type="submit" name="SUBMIT_DELETE" value="button_confirm" />
+#: from ../skins/eventdelete.pt
+msgid "button_confirm"
+msgstr "Confirmar"
+
+#.   <input type="submit" name="UPDATE_REFRESH" value="button_refresh" />
+#: from ../skins/edit.pt
+msgid "button_refresh"
+msgstr "Actualizar"
+
+#.   <input type="submit" name="UPDATE_REMOVE" value="button_remove" condition="view/canManageAttendees" />
+#.   <input type="submit" name="UPDATE_REMOVE" value="button_remove" />
+#: from ../skins/attendees.pt ../skins/calendar_edit.pt
+#: ../skins/meetinghelper.pt
+msgid "button_remove"
+msgstr "Borrar"
+
+#.   <input type="submit" name="UPDATE_SEARCH" value="button_search" />
+#.   <input type="submit" name="UPDATE_USER_SEARCH" value="button_search" />
+#: from ../skins/attendees.pt ../skins/meetinghelper.pt
+msgid "button_search"
+msgstr "Buscar"
+
+#.   <input type="submit" name="UPDATE_SEARCH_FREETIME" value="button_search_for_free_time" />
+#: from ../skins/meetinghelper.pt
+msgid "button_search_for_free_time"
+msgstr "Búsqueda de disponibilidades comunes"
+
+#.   <input type="submit" name="UPDATE_SUBMIT" value="button_submit" />
+#.   <input type="submit" name="SUBMIT_IMPORT" value="button_submit" />
+#: from ../skins/edit.pt ../skins/ical_import.pt
+msgid "button_submit"
+msgstr "Enviar"
+
+#.   <p>
+#.           With multiple calendar view, you can see the events from several
+#.           calendars as if they were one.
+#.         </p>
+#: from ../skins/calendar_edit.pt
+msgid "description_multiple_calendar_view"
+msgstr "Gracias a la vista múltiple de calendarios, puede ver los eventos de varios calendarios en uno solo."
+
+#.   <label for="file_field">
+#.                 Filename
+#.               </label>
+#: from ../skins/ical_import.pt
+msgid "filename_label"
+msgstr "Nombre del archivo"
+
+#.   <block>Access</block>
+#: from ../skins/event.pt
+msgid "label_access"
+msgstr "Accesibilidad"
+
+#.   <block>Attached Document</block>
+#: from ../skins/event.pt
+msgid "label_attached_document"
+msgstr "Nombre del fichero adjunto"
+
+#.   <b>
+#.               List of attendees:
+#.             </b>
+#: from ../skins/event.pt
+msgid "label_attendee_list"
+msgstr "Participantes"
+
+#.   <th>name</th>
+#: from ../skins/attendees.pt ../skins/event.pt
+msgid "label_attendee_name"
+msgstr "Nombre"
+
+#.   <th>status</th>
+#: from ../skins/attendees.pt
+msgid "label_attendee_status"
+msgstr "Estado"
+
+#.   <block>Categories</block>
+#: from ../skins/event.pt
+msgid "label_categories"
+msgstr "Categorías"
+
+#.   <a attributes="href string:+/addmeeting.html?${timeurl}">
+#.             Add event</a>
+#: from ../skins/meetinghelper.pt
+msgid "label_add_event"
+msgstr "Añadir un evento"
+
+#.   <h3>Current attendees</h3>
+#: from ../skins/meetinghelper.pt
+msgid "label_current_attendees"
+msgstr "Participantes actuales"
+
+#.   <h4>label_currently_visible_calendars</h4>
+#: from ../skins/calendar_edit.pt
+msgid "label_currently_visible_calendars"
+msgstr "Calendarios visibles actualmente"
+
+#.   <block>Date</block>
+#: from ../skins/event.pt
+msgid "label_date"
+msgstr "Fecha"
+
+#.   <a attributes="href eventview/getDayUrl">day</a>
+#.   <a attributes="href view/getDayUrl">day</a>
+#: from ../skins/attendees.pt ../skins/event.pt
+msgid "day"
+msgstr "Día"
+
+#.   <label for="desc_field">label_description</label>
+#.   <b>
+#.               Description:
+#.             </b>
+#: from ../skins/calendar_edit.pt ../skins/event.pt
+msgid "label_description"
+msgstr "Descripción"
+
+#.   <block>Duration</block>
+#.   <th>Duration</th>
+#: from ../skins/event.pt ../skins/eventlist_macro.pt
+msgid "label_duration"
+msgstr "Duración"
+
+#.   <block>Ends</block>
+#.   <th>Ends</th>
+#: from ../skins/event.pt ../skins/meetinghelper.pt
+msgid "label_ends"
+msgstr "Fin"
+
+#.   <b>
+#.             List of attendees
+#.           </b>
+#: from ../skins/attendees.pt
+msgid "label_list_of_attendees"
+msgstr "Participantes"
+
+#.   <h3>List of matching times</h3>
+#: from ../skins/meetinghelper.pt
+msgid "label_list_of_matching_times"
+msgstr "Periodos de disponibilidad común"
+
+#.   <block>Location</block>
+#: from ../skins/event.pt
+msgid "label_location"
+msgstr "Localización"
+
+#.   <h1>
+#.         Meeting helper
+#.       </h1>
+#: from ../skins/meetinghelper.pt
+msgid "label_meeting_helper"
+msgstr "Organizar una reunión"
+
+#.   <a attributes="href eventview/getMonthUrl">month</a>
+#.   <a attributes="href view/getMonthUrl">month</a>
+#: from ../skins/attendees.pt ../skins/event.pt
+msgid "month"
+msgstr "Mes"
+
+#.   <h3>
+#.             Multiple calendar view
+#.           </h3>
+#: from ../skins/calendar_edit.pt
+msgid "label_multiple_calendar_view"
+msgstr "Vista múltiple"
+
+#.   <td>No attendees selected</td>
+#: from ../skins/calendar_edit.pt ../skins/meetinghelper.pt
+msgid "label_no_attendees_selected"
+msgstr "Debe seleccionar al menos un participante"
+
+#.   <block>Recurrence</block>
+#: from ../skins/event.pt
+msgid "label_recurrence"
+msgstr "Frecuencia"
+
+#.   <b>
+#.               Search for attendees
+#.             </b>
+#.   <h3>Search for attendees</h3>
+#: from ../skins/attendees.pt ../skins/meetinghelper.pt
+msgid "label_search_for_attendees"
+msgstr "Búsqueda de participantes"
+
+#.   <h4>label_search_for_calendars_to_add</h4>
+#: from ../skins/calendar_edit.pt
+msgid "label_search_for_calendars_to_add"
+msgstr "Búsqueda de calendarios"
+
+#.   <input type="submit" name="UPDATE_SEARCH_FREETIME" value="label_search_for_free_time" />
+#: from ../skins/meetinghelper.pt
+msgid "label_search_for_free_time"
+msgstr "Búsqueda de disponibilidades comunes"
+
+#.   <b>
+#.                 Search results
+#.               </b>
+#.   <h4>Search results</h4>
+#.   <h3>Search results</h3>
+#: from ../skins/attendees.pt ../skins/calendar_edit.pt
+#: ../skins/meetinghelper.pt
+msgid "label_search_results"
+msgstr "Resultados de la búsqueda"
+
+#.   <h3>Select Timespan</h3>
+#: from ../skins/meetinghelper.pt
+msgid "label_select_timespan"
+msgstr "Elegir un intervalo de tiempo"
+
+#.   <th>Start</th>
+#: from ../skins/eventlist_macro.pt
+msgid "label_start"
+msgstr "Comienzo"
+
+#.   <block>Starts</block>
+#.   <th>Starts</th>
+#: from ../skins/event.pt ../skins/meetinghelper.pt
+msgid "label_starts"
+msgstr "Comienzo"
+
+#.   <block>Status</block>
+#.   <th>status</th>
+#.   <th>Status</th>
+#: from ../skins/event.pt ../skins/eventlist_macro.pt
+msgid "label_status"
+msgstr "Estado"
+
+#.   <label for="title_field">label_title</label>
+#.   <th>Title</th>
+#: from ../skins/calendar_edit.pt ../skins/eventlist_macro.pt
+msgid "label_title"
+msgstr "Título"
+
+#.   <a attributes="href string:${view/getCalendarUrl}/${today/year}/${today/month}/${today/day}" define="today view/getTodayInfo">
+#.       Today
+#.     </a>
+#: from ../skins/day.pt ../skins/month.pt ../skins/week_macro.pt
+msgid "label_today"
+msgstr "Hoy"
+
+#.   <block>Not Busy</block>
+#: from ../skins/event.pt
+msgid "label_transparent"
+msgstr "Disponibilidad"
+
+msgid "label_organizer"
+msgstr "Organizador"
+
+#.   <label for="type_field">label_type</label>
+#: from ../skins/calendar_edit.pt
+msgid "label_type"
+msgstr "Tipo"
+
+#.   <h2>Weeks</h2>
+#: from ../skins/weeklist.pt
+msgid "Weeks"
+msgstr "Semanas"
+
+#.   <block>Year</block>
+#: from ../skins/weekyear.pt ../skins/year.pt
+msgid "Year"
+msgstr "Año"
+
+#.   <h1>
+#.         Events that need action from you
+#.       </h1>
+#: from ../skins/action_needed_events.pt
+msgid "message_events_action_is_needed_for"
+msgstr "Eventos"
+
+#.   <block>.</block>
+#: from ../skins/attendees.pt ../skins/event.pt
+msgid "message_see_this_events_postfix"
+msgstr "de este evento"
+
+#.   <block>see this event's</block>
+#: from ../skins/attendees.pt ../skins/event.pt
+msgid "message_see_this_events_prefix"
+msgstr "ver el"
+
+#.   <h4>
+#.       Select new participation status
+#.     </h4>
+#: from ../skins/eventlist_macro.pt
+msgid "message_select_new_participation_status"
+msgstr "Seleccionar el estado"
+
+#.   <b>
+#.                     This is an all-day event.
+#.                   </b>
+#: from ../skins/event.pt
+msgid "message_this_is_an_all_day_event"
+msgstr "Evento de todo el día"
+
+#.   <b>
+#.                 You can be invited to meetings during this event.
+#.               </b>
+#: from ../skins/event.pt
+msgid "transparent_description"
+msgstr "Está disponible durante este evento"
+
+#.   <block>you have</block>
+#: from ../skins/calendar.pt
+msgid "you have"
+msgstr "Usted"
+
+# Role names:
+msgid "AttendeeManager"
+msgstr "Responsable de la agenda"
+
+msgid "AttendeeReader"
+msgstr "Lector de la  agenda"
+
+msgid "EventParticipant"
+msgstr "Participante en el evento"
+
+msgid "EventOrganizer"
+msgstr "Organizador del evento"
+
+msgid "EventReader"
+msgstr "Lector del evento"
+
+# Event status
+msgid "CANCELED"
+msgstr "Cancelado"
+
+msgid "CONFIRMED"
+msgstr "Confirmado"
+
+msgid "TENTATIVE"
+msgstr "Pendiente de confirmación"
+
+msgid "ACCEPTED"
+msgstr "Aceptado"
+
+msgid "DELEGATED"
+msgstr "Delegado"
+
+msgid "DECLINED"
+msgstr "Rehusado"
+
+msgid "NEEDS-ACTION"
+msgstr "Por tratar"
+
+msgid "needs-action"
+msgstr "Por tratar"
+
+msgid "label_true"
+msgstr "Sí"
+
+msgid "label_false"
+msgstr "No"
+
+msgid "accepted"
+msgstr "aceptado"
+
+msgid "delegated"
+msgstr "delegado"
+
+msgid "declined"
+msgstr "rehusado"
+
+msgid "tentative"
+msgstr "por confirmar"
+
+# Visibility
+msgid "PRIVATE"
+msgstr "Privado"
+
+msgid "PUBLIC"
+msgstr "Público"
+
+msgid "CONFIDENTIAL"
+msgstr "Confidencial"
+
+# For event display
+msgid "Private Event"
+msgstr "Privado"
+
+# Attendee types
+msgid "INDIVIDUAL"
+msgstr "Individual"
+
+msgid "RESOURCE"
+msgstr "Recurso"
+
+msgid "WORKSPACE"
+msgstr "Espacio de trabajo"
+
+msgid "Search between"
+msgstr "Buscar entre"
+
+msgid "First date"
+msgstr "Fecha de comienzo"
+
+msgid "Last date"
+msgstr "Fecha de fin"
+
+msgid "and"
+msgstr "y"
+
+msgid "Duration"
+msgstr "Duración"
+
+msgid "Start searching from this date."
+msgstr "Buscar a partir de esta fecha"
+
+msgid "Stop searching after this date."
+msgstr "Finalizar la búsqueda en esta fecha"
+
+msgid "Start search at this hour"
+msgstr "Buscar a partir de esta hora"
+
+msgid "Stop search at this hour"
+msgstr "Finalizar la búsqueda a partir de esta hora"
+
+msgid "The expected duration of the event"
+msgstr "Duración prevista del evento"
+
+msgid "Width"
+msgstr "Ancho"
+
+msgid "The total width of the view"
+msgstr "Ancho total de la vista"
+
+msgid "Height"
+msgstr "Altura"
+
+msgid "The total height of the view"
+msgstr "Altura total de la vista"
+
+msgid "First Day"
+msgstr "Primer día"
+
+msgid "The first day of the view"
+msgstr "Primer día de la vista"
+
+msgid "Days"
+msgstr "Días"
+
+msgid "The number of days shown"
+msgstr "Número de días mostrados"
+
+msgid "From hour"
+msgstr "A partir de"
+
+msgid "The time at the top of the view"
+msgstr "Hora mostrada en lo alto de la vista"
+
+msgid "To hour"
+msgstr "Hasta"
+
+msgid "The time at the bottom of the view"
+msgstr "Hora mostrada en la parte inferior de la vista"
+
+msgid "Title"
+msgstr "Título"
+
+msgid "The title of the event."
+msgstr "Título del evento"
+
+msgid "Description"
+msgstr "Descripción"
+
+msgid "A description of the event."
+msgstr "Descripción del evento"
+
+msgid "Starts"
+msgstr "Comienzo"
+
+msgid "Date and time when this event starts."
+msgstr "Fecha y hora de comienzo del evento"
+
+msgid "Ends"
+msgstr "Fin"
+
+msgid "Date and time when this event ends."
+msgstr "Fecha y hora de finalización del evento"
+
+msgid "Takes all day"
+msgstr "Día completo"
+
+msgid "Check this box if the event goes on all day"
+msgstr "Marque esta casilla si el evento dura todo el día"
+
+msgid "Not busy"
+msgstr "Disponible"
+
+msgid "This event should not appear as busy time in the meeting helper."
+msgstr "Este evento no aparece como franja horaria ocupada para la organización de la reunión."
+
+msgid "Location"
+msgstr "Localización"
+
+msgid "The location where this event takes place."
+msgstr "Localización del evento"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "The status of the event."
+msgstr "Estado del evento"
+
+msgid "Document"
+msgstr "Documento"
+
+msgid "A document related to this event."
+msgstr "Documento relativo al evento"
+
+msgid "Categories"
+msgstr "Categorías"
+
+msgid "Categories for this event"
+msgstr "Categorías para el evento"
+
+msgid "Access"
+msgstr "Acceso"
+
+msgid "Edit event"
+msgstr "Modificar el evento"
+
+# Error messages:
+msgid "Required input is missing."
+msgstr "Faltan datos"
+
+msgid "End must come after start"
+msgstr "La fecha de fin debe ser posterior a la de comienzo"
+
+msgid "Invalid datetime data"
+msgstr "Fecha u hora no válida"
+
+msgid "An error occured."
+msgstr "Se ha producido un error"
+
+msgid "Invalid duration"
+msgstr "Duración no válida"
+
+msgid "Invalid time"
+msgstr "Hora no válida"
+
+msgid "Invalid value"
+msgstr "Valor no válido"
+
+msgid "Invalid integer data"
+msgstr "Valor no válido"
+
+msgid "Edit recurrence"
+msgstr "Modificar la frecuencia"
+
+msgid "No recurrence"
+msgstr "Sin frecuencia"
+
+msgid "Daily recurrence"
+msgstr "Frecuencia diaria"
+
+msgid "Weekly recurrence"
+msgstr "Frecuencia semanal"
+
+msgid "Monthly recurrence"
+msgstr "Frecuencia mensual"
+
+msgid "Yearly recurrence"
+msgstr "Frecuencia anual"
+
+msgid "Edit Recurrence"
+msgstr "Modificar la frecuencia"
+
+msgid "Recurrence type"
+msgstr "Tipo de frecuencia"
+
+msgid "Interval"
+msgstr "Intervalo"
+
+msgid "Count"
+msgstr "Número total de veces"
+
+# recurrence only. Just before a date...
+msgid "Until"
+msgstr "Hasta"
+
+msgid "Weekdays"
+msgstr "Días"
+
+msgid "nop"
+msgstr "No en"
+
+msgid "monthday"
+msgstr "Día del mes"
+
+msgid "weekday"
+msgstr "Día de la semana"
+
+msgid "lastweekday"
+msgstr "Último día del mes"
+
+# pas tres clair, mais infobulle pour preciser
+# Long day labels
+msgid "weekday_0"
+msgstr "Lunes"
+
+msgid "weekday_1"
+msgstr "Martes"
+
+msgid "weekday_2"
+msgstr "Miércoles"
+
+msgid "weekday_3"
+msgstr "Jueves"
+
+msgid "weekday_4"
+msgstr "Viernes"
+
+msgid "weekday_5"
+msgstr "Sábado"
+
+msgid "weekday_6"
+msgstr "Domingo"
+
+# The initial
+msgid "weekday_initial_0"
+msgstr "L"
+
+msgid "weekday_initial_1"
+msgstr "M"
+
+msgid "weekday_initial_2"
+msgstr "M"
+
+msgid "weekday_initial_3"
+msgstr "J"
+
+msgid "weekday_initial_4"
+msgstr "V"
+
+msgid "weekday_initial_5"
+msgstr "S"
+
+msgid "weekday_initial_6"
+msgstr "D"
+
+msgid "week"
+msgstr "semana"
+
+msgid "year"
+msgstr "Año"
+
+msgid "psm_file_uploaded"
+msgstr "Fichero importado"
+
+msgid "Behaviour"
+msgstr "Comportamiento"
+
+msgid "Date selector"
+msgstr "Elegir la fecha"
+
+msgid "Selects the recurrence rule for the object"
+msgstr "Elegir el tipo de frecuencia para el evento"
+
+# Yes, we would really like to use a short ID here,
+# but we can't do that until Five 1.2, unfortunately.
+msgid ""
+"Interval of recurrence (a positive integer).\n"
+"\n"
+"        For example, to indicate that an event occurs every second day,\n"
+"        you would create a DailyRecurrenceRule witl interval equal to 2."
+msgstr "Intevalo de frecuencia: para indicar que un evento tiene lugar cada dos días, crear por ejemplo una regla de frecuencia cotidiana con un intervalo de 2."
+
+msgid ""
+"Number of times the event is repeated.\n"
+"\n"
+"        Can be None or an integer value.  If count is not None then\n"
+"        until must be None.  If both count and until are None the\n"
+"        event repeats forever."
+msgstr "Número de veces que se repite un evento (puede ser cero o un valor entero)"
+
+msgid ""
+"The date of the last recurrence of the event.\n"
+"\n"
+"        Can be None or a datetime.date instance.  If until is not None\n"
+"        then count must be None.  If both count and until are None the\n"
+"        event repeats forever."
+msgstr "La fecha de la última convocatoria de este evento. Se puede dejar vacía. Si este campo ha sido rellenado, el campo <<número de repeticiones>> debe estar vacío. Si los dos están vacíos, el evento se repite indefinidamente."
+
+msgid ""
+"A set of weekdays when this event occurs.\n"
+"\n"
+"        Weekdays are represented as integers from 0 (Monday) to 6 (Sunday).\n"
+"        This is what the `calendar` and `datetime` modules use.\n"
+"\n"
+"        The event repeats on the weekday of the first occurence even\n"
+"        if that weekday is not in this set."
+msgstr "Seleccione en qué días ocurren los eventos"
+
+msgid ""
+"Specification of monthly occurence behaviour.\n"
+"\n"
+"        Can be one of three values: 'monthday', 'weekday', 'lastweekday'.\n"
+"\n"
+"        'monthday'    specifies that the event recurs on the same day of month\n"
+"                      (e.g., 25th day of a month).\n"
+"\n"
+"        'weekday'     specifies that the event recurs on the same week\n"
+"                      within a month on the same weekday, indexed from the\n"
+"                      first (e.g. 3rd Friday of a month).\n"
+"\n"
+"        'lastweekday' specifies that the event recurs on the same week\n"
+"                      within a month on the same weekday, indexed from the\n"
+"                      end of month (e.g. 2nd last Friday of a month)."
+msgstr "Especificación de la frecuencia mensual"
+
+msgid "YYYY-MM-DD"
+msgstr "DD-MM-AAAA"
+
+msgid "%Y-%m-%d"
+msgstr "%d-%m-%Y"
+
+msgid "%d/%m"
+msgstr "%d-%m"
+
+msgid "Updated on %(date_time)s"
+msgstr "Última actualización: %(date_time)s"
+
+msgid "No events to list"
+msgstr "No hay eventos en la lista"
+
+msgid "days"
+msgstr "Días"
+
+msgid "weeks"
+msgstr "Semanas"
+
+msgid "months"
+msgstr "meses"
+
+msgid "years"
+msgstr "años"
+
+msgid "Every day"
+msgstr "Cada día"
+
+msgid "Every week"
+msgstr "Cada semana"
+
+msgid "Every month"
+msgstr "Cada mes"
+
+msgid "Every year"
+msgstr "Cada año"
+
+msgid "Every other day"
+msgstr "Cada dos días"
+
+msgid "Every other week"
+msgstr "Cada dos semanas"
+
+msgid "Every other month"
+msgstr "Cada dos meses"
+
+msgid "Every other year"
+msgstr "Cada dos años"
+
+msgid "Every ${count} days"
+msgstr "Cada ${count} días"
+
+msgid "Every ${count} weeks"
+msgstr "Cada ${count} semanas"
+
+msgid "Every ${count} months"
+msgstr "Cada ${count} meses"
+
+msgid "Every ${count} years"
+msgstr "Cada ${count} años"
+
+msgid "Who has access to this event."
+msgstr "Quién tiene acceso a este evento"
+
+# # Dates
+msgid "calendar_month_1"
+msgstr "Enero"
+
+msgid "calendar_month_2"
+msgstr "Febrero"
+
+msgid "calendar_month_3"
+msgstr "Marzo"
+
+msgid "calendar_month_4"
+msgstr "Abril"
+
+msgid "calendar_month_5"
+msgstr "Mayo"
+
+msgid "calendar_month_6"
+msgstr "Junio"
+
+msgid "calendar_month_7"
+msgstr "Julio"
+
+msgid "calendar_month_8"
+msgstr "Agosto"
+
+msgid "calendar_month_9"
+msgstr "Septiembre"
+
+msgid "calendar_month_10"
+msgstr "Octubre"
+
+msgid "calendar_month_11"
+msgstr "Noviembre"
+
+msgid "calendar_month_12"
+msgstr "Diciembre"
+
+msgid "calendar_day_0"
+msgstr "Lu"
+
+msgid "calendar_day_1"
+msgstr "Ma"
+
+msgid "calendar_day_2"
+msgstr "Mi"
+
+msgid "calendar_day_3"
+msgstr "Ju"
+
+msgid "calendar_day_4"
+msgstr "Vi"
+
+msgid "calendar_day_5"
+msgstr "Sá"
+
+msgid "calendar_day_6"
+msgstr "Do"
+
+msgid "event"
+msgstr "evento"
+
+msgid "label_current_year"
+msgstr "Este año"
+
+msgid "label_current_month"
+msgstr "Este mes"
+
+msgid "label_current_week"
+msgstr "Esta semana"
+
+msgid "label_current_day"
+msgstr "Hoy"
+
+# Busy checker:
+msgid "The attendee is busy during this event"
+msgstr "El participante está ocupado durante este evento"
+
+msgid "This attendee is busy during the selected period"
+msgstr "Los participantes ya están ocupados en el perído seleccionado"
+
+msgid "Some attendees are busy during the selected period: %(users)s"
+msgstr "Algunos participantes ya están ocupados en el perído seleccionado: %(users)s"
+

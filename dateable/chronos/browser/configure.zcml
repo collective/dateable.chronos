@@ -1,0 +1,170 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="chronos">
+
+  <browser:resourceDirectory
+      name="chronos_support"
+      directory="resources"
+      permission="dateable.chronos.ViewContent"
+      />
+
+  <browser:view
+      for="*"
+      name="chronos_macros"
+      class=".chronos_macros.ChronosMacros"
+      permission="dateable.chronos.ViewContent"
+      />
+
+  <browser:view
+      for="dateable.chronos.interfaces.IPossibleCalendar"
+      name="chronos_popup"
+      class=".chronos_popup.ChronosPopup"
+      permission="dateable.chronos.ViewContent"
+      />
+    
+  <browser:page
+      name="calendar-config.html"
+      for="dateable.chronos.interfaces.IPossibleCalendar"
+      permission="dateable.chronos.ModifyContent"
+      class=".config.ConfigView"
+      />
+      
+  <browser:page
+      name="month.html"
+      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".month.MonthView"
+      template="month.pt"
+      />
+
+  <browser:page
+      name="week.html"
+      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".week.WeekView"
+      template="week.pt"
+      />
+      
+  <browser:page
+      name="day.html"
+      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".day.DayView"
+      template="day.pt"
+      />
+
+  <browser:page
+      name="list.html"
+      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".events.EventListingView"
+      attribute="upcomingEvents"
+      />
+
+  <browser:page
+      name="past.html"
+      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".events.EventListingView"
+      attribute="pastEvents"
+      />
+
+  <browser:page
+     name="chronos.css"
+     for="dateable.chronos.interfaces.ICalendarEnhanced"
+     permission="dateable.chronos.ViewContent"
+     class=".styles.ChronosStyle"
+     template="resources/chronos.css"
+  />
+
+  <!-- event display-->
+
+  <adapter
+    for="dateable.kalends.IOccurrence .interfaces.IUnPositionedView"
+    factory=".eventdisplay.EventDisplay"
+    />
+
+  <adapter
+    for="dateable.kalends.IOccurrence .interfaces.IPositionedView"
+    factory=".eventdisplay.PositionedEventDisplay"
+    />
+    
+
+  <!-- Menu items -->
+  <adapter 
+    factory=".displays.CalendarDynamicViews"
+    />
+
+  <browser:menu id="chronos_views" />
+
+  <browser:menuItem
+    menu="chronos_views"
+    title="Day"
+    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    action="day.html"
+    permission="zope2.View"
+    />
+
+  <browser:menuItem
+    menu="chronos_views"
+    title="Week"
+    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    action="week.html"
+    permission="zope2.View"
+    />
+          
+  <browser:menuItem
+    menu="chronos_views"
+    title="Month"
+    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    action="month.html"
+    permission="zope2.View"
+    />
+          
+  <browser:menuItem
+    menu="chronos_views"
+    title="List"
+    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    action="list.html"
+    permission="zope2.View"
+    />
+
+  <browser:menuItem
+    menu="chronos_views"
+    title="Past"
+    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    action="past.html"
+    permission="zope2.View"
+    />
+
+  <!-- The javascript navigator -->
+  
+  <browser:viewletManager
+      name="chronos.navigation"
+      provides=".interfaces.INavigation"
+      permission="zope2.View"
+      />
+  
+  <browser:viewlet
+      for="*"
+      name="chronos.ajaxnavigation"
+      manager=".interfaces.INavigation"
+      class=".thumbnail.ThumbnailMonth"
+      permission="zope2.View"
+      />
+      
+  <browser:resource
+    file="navigation.kss"
+    name="navigation.kss"
+    />
+
+  <browser:page
+      for="dateable.chronos.interfaces.IPossibleCalendar"
+      name="kssNavigationChange"
+      class=".thumbnail.NavigationView"
+      attribute="navigationChange"
+      permission="dateable.chronos.ViewContent"
+      />
+    
+</configure>

@@ -1,0 +1,78 @@
+=========================
+dateable.chronos Changes
+=========================
+
+dateable.chronos 0.5 (2009-05-03)
+=================================
+
+* Fixed an issue where utils.get_view_day would choke on a day that
+  didn't exist in the month.
+  [claytron]
+  
+* Several improvements of i18n including German and Italian translation.
+  [xo7,paulox]  
+
+dateable.chronos 0.4 (2008-10-04)
+=================================
+
+* fixed the getEventDisplays method for day.py to use the 
+  getOccurrencesInDay method since it already does the work for us
+  and it passes in the request.form so we can modify the search.
+  [claytron]
+
+* fixed the calendar_view_tabs macro so that the id gets the proper
+  title from the action, thus validating the page.
+  [claytron]
+
+* made the menu items actions (day, month, week, list, past) keep
+  what we had in the request
+  [lucielejard]
+
+* when we get the occurrences in a day, made the day end at 11:59pm
+  instead of 12am the next day. This was causing events starting at
+  12am to start displaying the day before.
+  [lucielejard]
+
+* hooked up the selection of the hour height for the day view
+  [lucielejard]
+
+* hooked up the selection of how many events we want to display
+  on the month view and if we even want to have a limit
+  [lucielejard]
+
+* hooked up the selection of "start hour" and "end hour" 
+  (site setup -> chronos configuration) with the day and week views. 
+  [lucielejard]
+ 
+* updated the display of events that last more than one day (on day and 
+  week views). This is possible thanks to the variable column_day that
+  allows you to know on which day you are displaying the event, and then
+  to know where to start/stop displaying the event on this day.
+  [lucielejard]
+ 
+* introduced two variables, before_line and after_line, to know
+  if we have to display the gray lines at the top and bottom of the
+  day and month views. For example, if your day starts at 12am, you 
+  don't need the grey line at the top, since there won't be any event
+  before 12am on this day.
+  [lucielejard]
+ 
+* allowed to select "24" as the end time on the manage calendar
+  form, to be able to display hours until midnight on day and
+  month views.
+  [lucielejard]
+
+* Fixed the _get_view_url_for_date so that it properly checks the days in the
+  month.  http://plone.org/products/dateable/issues/7
+  [claytron]
+
+dateable.chronos 0.3 (2008-07-09)
+=================================
+
+* Recurring event support
+
+* Nicer stylings
+
+* Add event feature improvements
+
+* And much, much more.
