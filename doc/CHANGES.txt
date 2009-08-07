@@ -1,0 +1,16 @@
+;-*-rst-*-
+
+=========================
+dateable.chronos Changes
+=========================
+
+dateable.chronos 0.3 (2008-07-09)
+=================================
+
+* Recurring event support
+
+* Nicer stylings
+
+* Add event feature improvements
+
+* And much, much more.

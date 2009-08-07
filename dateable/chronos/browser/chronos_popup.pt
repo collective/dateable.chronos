@@ -1,0 +1,15 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<div metal:define-macro="calendar"
+     tal:omit-tag="">
+  <img class="navigationIcon" src="#" tal:attributes="src string:${context/++resource++chronos_support/calendar_icon.gif}"  />
+  <div  class="chronos-popup-calendar hidden" id="chronosPopupCalendar" tal:content="structure provider:chronos.navigation" />
+</div>
+
+</body>
+
+</html>
