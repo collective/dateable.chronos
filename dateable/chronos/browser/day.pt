@@ -1,0 +1,186 @@
+<html metal:use-macro="context/main_template/macros/master" i18n:domain="chronos">
+<head>
+  <metal:block fill-slot="style_slot">
+      <style type="text/css" media="all" 
+          tal:content="string:@import url(${context/absolute_url}/chronos.css);">
+      </style>
+  </metal:block>
+</head>
+
+<body>
+<metal:block fill-slot="main" tal:define="dummy view/calcInfo">
+<div tal:replace="structure provider:plone.abovecontenttitle" />
+
+<h1 class="documentFirstHeading"> 
+    <metal:field use-macro="python:here.widget('title', mode='view')">
+    Title
+    </metal:field>
+</h1>
+
+<div tal:replace="structure provider:plone.belowcontenttitle" />
+
+<p class="documentDescription">
+    <metal:field use-macro="python:here.widget('description', mode='view')">
+    Description
+    </metal:field>
+</p>
+
+<div tal:replace="structure provider:plone.abovecontentbody" />
+
+<div id="chronos-calendar">
+    
+  <select class="toggleView">
+      <option class="toggleCalendar" i18n:translate="">Calendar View</option>
+      <option class="toggleList" i18n:translate="">List View</option>
+  </select>
+  <!-- The calendar, rendered as a table -->
+  <div metal:use-macro="here/@@chronos_macros/calendar_view_tabs" />
+  
+  <table class="ploneCalendar" summary="Calendar">
+      <thead>
+    <tr>
+      <th id="calendar-previous">
+        <a href="#" rel="nofollow"
+           title="Previous day"
+           id="calendar-nav-previous"
+           tal:attributes="href view/getPreviousViewUrl">&laquo;</a>
+      </th>
+      <th>
+          <span tal:omit-tag=""
+                tal:define="day view/getDate">
+                <tal:block content="string:calendar_day_${day/weekday}" i18n:translate="" />
+                <tal:block replace="python:view.get_short_date(day)" />
+                <a class="addEventShortcut"
+                  title="Add event"
+                  i18n:attributes="title"
+                  tal:attributes="href view/getEventCreationLink"
+                  tal:condition="view/canCreateEvents"
+                  >
+                  +
+                </a>
+                <metal:block use-macro="context/@@chronos_popup/calendar" />
+                <tal:block tal:replace='structure string:<script type="text/javascript">' />
+
+                <tal:block replace="structure string:</script>" />
+            </span>
+      </th>
+        <th id="calendar-next">
+            <a href="#" rel="nofollow"
+               title="Next day"
+               id="calendar-nav-next"
+               tal:attributes="href view/getNextViewUrl">&raquo;</a>
+        </th>
+      </tr>
+      </thead>
+  </table>
+  
+  <table class="ploneCalendar calendarView" summary="Calendar">
+    <tbody id="chronos-day">
+  <tr>
+    <td metal:define-macro="hour_labels" class="hourLabels">
+      <div style="position: relative;">
+        <tal:block repeat="hour python:range(view.from_hour, view.to_hour)">
+          <div class="hourLabel"
+               tal:define="top_index python:(repeat['hour'].index) + (view.before_line and 1 or 0)"
+               tal:attributes="style python:'top:%spx;;' % ( top_index* view.hour_height)">
+            <tal:block replace="python:view.localizedHour(hour)" />
+          </div>
+        </tal:block>
+      </div>
+    </td>
+    <td metal:define-macro="week_body" class="calendarBody" colspan="2"
+        tal:attributes="style string:height: ${view/height}px;; width: ${view/width}px;;">
+    <div style="position: relative;">
+      <!--The hour lines-->
+
+      <!--The before first hour line-->
+      <tal:block condition="view/before_line">
+        <div
+          class="hourLabel outOfficeHours"
+          tal:attributes="style python:'height: %spx;; top:0px;;' % view.hour_height;"
+          >
+        </div>
+      </tal:block>
+
+      <!-- The main lines -->
+      <tal:block repeat="hour python:range(view.from_hour, view.to_hour)">
+        <div
+          class="hourLabel inOfficeHours"
+          tal:define="top_index python:(repeat['hour'].index) + (view.before_line and 1 or 0)"
+          tal:attributes="style python:'height: %spx;; top:%spx;;' % (view.hour_height, top_index * view.hour_height);"
+          >
+        </div>
+      </tal:block>
+
+      <!--The after last hour line-->
+      <tal:block condition="view/after_line">
+        <div
+          class="hourLabel outOfficeHours"
+          tal:define="top_index python:view.hour_count + (view.before_line and 1 or 0)"
+          tal:attributes="style python:'height: %spx;; top:%spx;;' % (view.hour_height, top_index * view.hour_height);"
+          >
+        </div>
+      </tal:block>
+
+        <!--The events-->
+        <tal:block repeat="display python:view.getEventDisplays()">
+          <!-- TODO: Let the event determine the class -->
+          <div metal:use-macro="here/@@chronos_macros/standard_event" />
+        </tal:block>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="p4acalendar listView">
+<div class="eventlist">
+<tal:cond condition="python:not view.getEventDisplays()">There are no events for this day</tal:cond>
+<tal:block repeat="display python:view.getEventDisplays()">
+  <tal:def define="brainevent display/event;
+                   liststart brainevent/start;
+                   listend brainevent/end">
+       <div class="vevent event">            
+           <div class="event_details"><span tal:content="python:liststart.strftime('%B %d')" /></div>
+           <div class="event_body">
+               <p>
+               <a class="listTitle" tal:content="brainevent/title"
+                                    tal:attributes="href brainevent/url"/> 
+               (<span tal:content="python:liststart.strftime('%l:%M %p')" />
+               <span tal:content="python:listend.strftime(' - %l:%M %p')" />)<br />
+               <span tal:content="brainevent/description" /></p>
+           </div>
+       </div>
+  </tal:def>
+</tal:block>
+</div>
+</div>
+
+<script type="text/javascript">
+    jq(document).ready(function(){
+       cookie = readCookie("calendarView");
+       if (cookie == "Calendar View") {
+           jq(".toggleView option.toggleCalendar").attr("selected", true);
+           jq(".calendarView").css("display","table");
+           jq(".listView").css("display","none");
+       } else if (cookie == "List View") {
+           jq(".toggleView option.toggleList").attr("selected", true);
+           jq(".listView").css("display","block");
+           jq(".calendarView").css("display","none");
+       }
+        
+       jq(".toggleView").change(function() {
+          jq(".calendarView").toggle();
+          jq(".p4acalendar").toggle();
+          
+          createCookie('calendarView', jq(".toggleView option[selected]").text(), 999);
+       });
+    });
+</script>
+
+<div tal:replace="structure provider:plone.belowcontentbody" />
+
+</metal:block>
+
+</body>
+</html>
