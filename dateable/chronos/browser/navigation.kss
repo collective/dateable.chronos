@@ -1,0 +1,15 @@
+a.kssNavigationChange:click {
+    evt-click-preventdefault: True;
+    action-server: kssNavigationChange;
+    kssNavigationChange-year:          kssAttr(year);
+    kssNavigationChange-month:         kssAttr(month);
+    kssNavigationChange-viewname:      kssAttr(viewname);    
+}
+
+
+img.navigationIcon:click {
+    evt-click-preventdefault: True;
+    action-client: toggleClass;
+    toggleClass-value: hidden;
+    toggleClass-kssSelector: #chronosPopupCalendar;
+}

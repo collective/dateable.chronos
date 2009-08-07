@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_skins">
+ <object name="chronos" 
+         meta_type="Filesystem Directory View" 
+         id="chronos"
+         directory="dateable.chronos:skins/chronos"/>
+ <skin-path name="*">
+  <layer name="chronos"/>
+ </skin-path>
+</object>

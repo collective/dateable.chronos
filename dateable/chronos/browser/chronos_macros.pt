@@ -1,0 +1,118 @@
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="chronos">
+
+<head></head>
+<body>
+
+<div metal:define-macro="minicals" id="minicals">
+    <div id="minicalWrapperLeft">
+            <div class="minical_prev minical">
+                <div metal:use-macro="here/portlet_calendar/macros/portlet" />
+            </div>
+            <div class="visualClear"></div>
+    </div>
+    <div id="minicalWrapperRight">          
+            <div class="minical_next minical">
+                <div metal:use-macro="here/portlet_calendar/macros/portlet" />
+            </div>
+            <div class="visualClear"></div>
+    </div>
+</div>
+
+
+<div metal:define-macro="calendar_view_tabs"
+     tal:omit-tag="">
+    <h5 class="hiddenStructure" i18n:translate="calendar_sections">Calendar Views</h5>
+
+    <ul id="calendar-view-tabs"
+        tal:define="calendar_tabs view/view_tabs|nothing;
+                    mq python:modules['ZTUtils'].make_query;">
+        <tal:tabs tal:repeat="tab calendar_tabs"
+                  tal:condition="calendar_tabs">
+          <li tal:attributes="id string:calendar_view_tab-${tab/title};
+                              class python:tab.selected() and 'selected' or 'plain';">
+            <a href="" 
+               tal:content="tab/title"
+               tal:attributes="href python:'%s?%s' % (tab.action , mq(request.form));
+                               title tab/description">
+            Tab Name
+            </a></li></tal:tabs>
+    </ul>
+
+</div>
+
+<div metal:define-macro="calendar_navigation_tabs"
+     tal:omit-tag="">
+    
+    <ul id="calendar-navigation-tabs">
+      <li>
+        <a tal:attributes="href view/getPreviousViewUrl;"> 
+           &lt;&lt;
+        </a>
+      </li>
+      <li>
+        <a tal:attributes="href view/getTodayUrl;"
+           i18n:translate=""> 
+           Today
+        </a>
+      </li>
+      <li>
+        <a tal:attributes="href view/getNextViewUrl;"> 
+           &gt;&gt;
+        </a>
+      </li>
+    </ul>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<td metal:define-macro="week_footer" class="dayFooter">
+  <div style="position: relative;">
+    <span tal:repeat="day view/getDays"
+      tal:attributes="style python:'left:%spx;;' % (repeat['day'].index*view.day_width)">
+      <a tal:attributes="href string:AddZodbEvent.html">
+        <tal:block replace="day" />
+      </a>
+    </span>
+  </div>
+</td>
+
+
+<div metal:define-macro="standard_event" class="publicEvent"
+  tal:define="url display/url" 
+  tal:attributes="style display/getCssPositionString; 
+                  title display/title_and_time;">
+  <a tal:attributes="href url;" tal:condition="display/viewable">
+    <tal:block replace="display/title" />
+  </a>
+  <tal:block replace="display/title" tal:condition="not:display/viewable"/>
+  <a 
+    tal:define="status display/getCssStatusClass"
+    tal:condition="status"
+    tal:attributes="
+      href string:${url}attendees.html;
+      class status;"
+    >
+    (<tal:block i18n:translate=""
+      content="status"
+    />)
+  </a>
+</div>
+
+
+</body>
+</html>

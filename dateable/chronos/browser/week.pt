@@ -1,0 +1,136 @@
+<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+<head>
+  <metal:block fill-slot="style_slot">
+      <style type="text/css" media="all" 
+          tal:content="string:@import url(${context/absolute_url}/chronos.css);">
+      </style>
+  </metal:block>
+</head>
+<body>
+  <metal:block metal:fill-slot="body" tal:define="dummy view/calcInfo">
+  
+  <div tal:replace="structure provider:plone.abovecontenttitle" />
+  
+  <h1 class="documentFirstHeading"> 
+      <metal:field use-macro="python:here.widget('title', mode='view')">
+      Title
+      </metal:field>
+  </h1>
+  
+  <div tal:replace="structure provider:plone.belowcontenttitle" />
+  
+  <p class="documentDescription">
+      <metal:field use-macro="python:here.widget('description', mode='view')">
+      Description
+      </metal:field>
+  </p>
+  
+  <div tal:replace="structure provider:plone.abovecontentbody" />
+
+  <div id="chronos-calendar">
+    <!-- The calendar, rendered as a table -->
+    <div metal:use-macro="context/@@chronos_macros/calendar_view_tabs" />
+    <metal:block define-macro="week_view" i18n:domain="chronos">
+    <table class="ploneCalendar" summary="Calendar">
+      <thead>
+        <tr>
+          <th id="calendar-previous">
+            <a href="#" rel="nofollow"
+               title="Previous week"
+               id="calendar-nav-previous"
+               tal:attributes="href view/getPreviousViewUrl">&laquo;</a>
+          </th>
+          <th>
+            <span i18n:translate="">Week</span>
+            <span tal:content="view/week"/>
+            <metal:block use-macro="context/@@chronos_popup/calendar" />
+          </th>
+          <th id="calendar-next">
+            <a href="#" rel="nofollow"
+               title="Next week"
+               id="calendar-nav-next"
+               tal:attributes="href view/getNextViewUrl">&raquo;</a>
+          </th>
+        </tr>
+        <tr>
+          <th/>
+          <th metal:define-macro="day_labels" class="dayLabels inCalendar">
+            <div style="position: relative;">
+              <tal:block repeat="day view/getDays">
+                <div class="dayLabel"
+                  tal:define="dayurl python:view.getDateUrl(day, 'day')"
+                  tal:attributes="style python:'left:%.1f%%;;' % (repeat['day'].index * view.day_width*100.0/view.width)" 
+                  >
+                  <a tal:attributes="href dayurl">
+                    <tal:block content="string:calendar_day_${day/weekday}" 
+                      i18n:translate="" />
+                    <tal:block replace="python:view.get_short_date(day)"/>
+                  </a>
+                  <a class="addEventShortcut"
+                    title="Add event"
+                    i18n:attributes="title"
+                    tal:define="dayurl string:dayURL"
+                    tal:attributes="href python:view.getEventCreationLink(day)"
+                    >
+                    +
+                  </a>
+                </div>
+              </tal:block>
+            </div>
+          </th>
+          <th/>
+        </tr>
+        </thead>
+        <tbody id="chronos-week">
+        <tr>
+          <td metal:use-macro="context/@@day.html/hour_labels" />
+          <td metal:define-macro="week_body" class="calendarBody"
+              tal:attributes="style string:height: ${view/height}px;; width: ${view/width}px;;">
+          <div style="position: relative;">
+            <!--The hour lines-->
+
+            <!--The before first hour line-->
+            <tal:block condition="view/before_line">
+              <div
+                class="hourLabel outOfficeHours"
+                tal:attributes="style python:'height: %spx;; top:0px;;' % view.hour_height;"
+                >
+              </div>
+            </tal:block>
+
+            <!-- The main lines -->
+            <tal:block repeat="hour python:range(view.from_hour, view.to_hour)">
+              <div
+                class="hourLabel inOfficeHours"
+                tal:define="top_index python:(repeat['hour'].index) + (view.before_line and 1 or 0)"
+                tal:attributes="style python:'height: %spx;; top:%spx;;' % (view.hour_height, top_index * view.hour_height);"
+                >
+              </div>
+            </tal:block>
+
+            <!--The after last hour line-->
+            <tal:block condition="view/after_line">
+              <div
+                class="hourLabel outOfficeHours"
+                tal:define="top_index python:view.hour_count + (view.before_line and 1 or 0)"
+                tal:attributes="style python:'height: %spx;; top:%spx;;' % (view.hour_height, top_index * view.hour_height);"
+                >
+              </div>
+            </tal:block>
+
+              <!--The events-->
+              <tal:block repeat="display python:view.getEventDisplays()">
+                <!-- TODO: Let the event determine the class -->
+                <div metal:use-macro="context/@@chronos_macros/standard_event" />
+              </tal:block>
+            </div>
+          </td>
+          <td metal:use-macro="context/@@day.html/hour_labels" />
+        </tr>
+        </tbody>
+      </table>
+    </metal:block>
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+  </metal:block>
+  </body>
+</html>
