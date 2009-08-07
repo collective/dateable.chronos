@@ -1,0 +1,160 @@
+# Gettext Message File for chronos.
+# Lennart Regebro <regebro@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2009-07-11 12:08+0900\n"
+"Last-Translator: Retsu <tyam@mac.com>\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: ja\n"
+"Language-Name: Japanese\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: chronos\n"
+
+# Really short date (for strftime)
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr "%m/%d"
+
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html" define="dayurl string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};">
+#. +
+#. </a>
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr "イベントを追加"
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr "カレンダービュー"
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr "クロノスコンフィグレーション"
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr "クロノスが再コンフィグされました"
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr "カレンダーをコンフィグ"
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr "日"
+
+msgid "List"
+msgstr "リスト"
+
+msgid "Month"
+msgstr "月"
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr "もっと..."
+
+msgid "Past"
+msgstr "Past"
+
+# For event display
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr "プライベートイベント"
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr "今日"
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr "週"
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr "週番号"
+
+#. <h2>Weeks</h2>
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr "週"
+
+#. <block>Year</block>
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr "年"
+
+msgid "calendar_day_0"
+msgstr "月"
+
+msgid "calendar_day_1"
+msgstr "火"
+
+msgid "calendar_day_2"
+msgstr "水"
+
+msgid "calendar_day_3"
+msgstr "木"
+
+msgid "calendar_day_4"
+msgstr "金"
+
+msgid "calendar_day_5"
+msgstr "土"
+
+msgid "calendar_day_6"
+msgstr "日"
+
+## Dates
+msgid "calendar_month_1"
+msgstr "1月"
+
+msgid "calendar_month_10"
+msgstr "10月"
+
+msgid "calendar_month_11"
+msgstr "11月"
+
+msgid "calendar_month_12"
+msgstr "12月"
+
+msgid "calendar_month_2"
+msgstr "2月"
+
+msgid "calendar_month_3"
+msgstr "3月"
+
+msgid "calendar_month_4"
+msgstr "4月"
+
+msgid "calendar_month_5"
+msgstr "5月"
+
+msgid "calendar_month_6"
+msgstr "6月"
+
+msgid "calendar_month_7"
+msgstr "7月"
+
+msgid "calendar_month_8"
+msgstr "8月"
+
+msgid "calendar_month_9"
+msgstr "9月"
+

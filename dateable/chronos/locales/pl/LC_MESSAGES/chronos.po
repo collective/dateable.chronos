@@ -1,0 +1,154 @@
+# Dateable.chronos custom messages template
+# Lennart Regebro, 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2009-06-28 16:00+0000\n"
+"Last-Translator: Magdalena Regebro <magdalena.janiec@gmail.com>§\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Language-Code: pl\n"
+"Language-Name: Polish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: chronos\n"
+
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr "%d/%m"
+
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr "Dodaj wydarzenie"
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr "Układ kalendarza"
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr "Konfiguracja chronosu"
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr "Chronos zostal skonfigurowany"
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr "Skonfuguruj kalendarz"
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr "Dzień"
+
+msgid "List"
+msgstr "Lista"
+
+msgid "Month"
+msgstr "Miesiąc"
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr "Więcej"
+
+msgid "Past"
+msgstr "Przeszłe"
+
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr ""
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr "Dzisiaj"
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr "Tydzień"
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr "Tydzień #"
+
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr "Tygodnie"
+
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr "Rok"
+
+# Short week days, i e Mo, Tu, We etc. 0 = Monday
+msgid "calendar_day_0"
+msgstr "Poniedziałek"
+
+msgid "calendar_day_1"
+msgstr "Wtorek"
+
+msgid "calendar_day_2"
+msgstr "Środa"
+
+msgid "calendar_day_3"
+msgstr "Czwartek"
+
+msgid "calendar_day_4"
+msgstr "Piątek"
+
+msgid "calendar_day_5"
+msgstr "Sobota"
+
+msgid "calendar_day_6"
+msgstr "Niedziela"
+
+# These are the messages that are not found by i18ndude. Typically because they
+# are generated.
+# Long month names, i e January, February, etc.
+msgid "calendar_month_1"
+msgstr "Styczeń"
+
+msgid "calendar_month_2"
+msgstr "Luty"
+
+msgid "calendar_month_3"
+msgstr "Marzec"
+
+msgid "calendar_month_4"
+msgstr "Kwiecień"
+
+msgid "calendar_month_5"
+msgstr "Maj"
+
+msgid "calendar_month_6"
+msgstr "Czerwiec"
+
+msgid "calendar_month_7"
+msgstr "Lipiec"
+
+msgid "calendar_month_8"
+msgstr "Sierpień"
+
+msgid "calendar_month_9"
+msgstr "Wrzesień"
+
+msgid "calendar_month_10"
+msgstr "Październik"
+
+msgid "calendar_month_11"
+msgstr "Listopad"
+
+msgid "calendar_month_12"
+msgstr "Grudzień"

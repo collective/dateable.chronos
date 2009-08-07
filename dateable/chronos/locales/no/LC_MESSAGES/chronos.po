@@ -1,0 +1,163 @@
+# Gettext Message File for chronos.
+# Lennart Regebro <regebro@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2009-06-08 12:00+0200\n"
+"Last-Translator: Mats Tande <mats@tande.net>\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: no\n"
+"Language-Name: Norsk\n"
+"Preferred-Encodings: latin9\n"
+"Domain: chronos\n"
+
+# Really short date (for strftime)
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr "%d/%m"
+
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html" define="dayurl string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};">
+#. +
+#. </a>
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr "Ny hendelse"
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr "Kalendervisninger"
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr "Chronos konfigurering"
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr "Konfigureringen lagret."
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr "Konfigurer kalenderen."
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr "Dag"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Month"
+msgstr "Måned"
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr "Mer..."
+
+msgid "Past"
+msgstr "Tidligere"
+
+# For event display
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr "Privat hendelse"
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr "Idag"
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr "Uke"
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr "Uke"
+
+#. <h2>Weeks</h2>
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr "Uker"
+
+#. <block>Year</block>
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr "År"
+
+# Short week days, i e Mo, Tu, We etc. 0 = Monday
+msgid "calendar_day_0"
+msgstr "Man"
+
+msgid "calendar_day_1"
+msgstr "Tir"
+
+msgid "calendar_day_2"
+msgstr "Ons"
+
+msgid "calendar_day_3"
+msgstr "Tor"
+
+msgid "calendar_day_4"
+msgstr "Fre"
+
+msgid "calendar_day_5"
+msgstr "Lør"
+
+msgid "calendar_day_6"
+msgstr "Søn"
+
+# These are the messages that are not found by i18ndude. Typically because they
+# are generated.
+# Long month names, i e January, February, etc.
+msgid "calendar_month_1"
+msgstr "Januar"
+
+msgid "calendar_month_10"
+msgstr "Oktober"
+
+msgid "calendar_month_11"
+msgstr "November"
+
+msgid "calendar_month_12"
+msgstr "Desember"
+
+msgid "calendar_month_2"
+msgstr "Februar"
+
+msgid "calendar_month_3"
+msgstr "Mars"
+
+msgid "calendar_month_4"
+msgstr "April"
+
+msgid "calendar_month_5"
+msgstr "Mai"
+
+msgid "calendar_month_6"
+msgstr "Juni"
+
+msgid "calendar_month_7"
+msgstr "Juli"
+
+msgid "calendar_month_8"
+msgstr "August"
+
+msgid "calendar_month_9"
+msgstr "September"
+

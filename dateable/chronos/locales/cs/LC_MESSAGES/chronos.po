@@ -1,0 +1,160 @@
+# Gettext Message File for chronos.
+# Lennart Regebro <regebro@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2009-07-05 20:17+0100\n"
+"Last-Translator: Radim Novotny <novotny.radim@gmail.com>\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: cs\n"
+"Language-Name: Czech\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: chronos\n"
+
+# Really short date (for strftime)
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr "%d.%m"
+
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html" define="dayurl string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};">
+#. +
+#. </a>
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr "Přidat událost"
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr "Kalendářové pohledy"
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr "Konfigurace Chronos"
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr "Produkt Chronos byl nastaven."
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr "Nastavení kalendáře"
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr "Den"
+
+msgid "List"
+msgstr "Seznam"
+
+msgid "Month"
+msgstr "Měsíc"
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr "Více..."
+
+msgid "Past"
+msgstr "Minulé"
+
+# For event display
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr "Soukromá událost"
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr "Dnes"
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr "Týden"
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr "Č. týdne"
+
+#. <h2>Weeks</h2>
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr "Týdny"
+
+#. <block>Year</block>
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr "Rok"
+
+msgid "calendar_day_0"
+msgstr "Po"
+
+msgid "calendar_day_1"
+msgstr "Út"
+
+msgid "calendar_day_2"
+msgstr "St"
+
+msgid "calendar_day_3"
+msgstr "Čt"
+
+msgid "calendar_day_4"
+msgstr "Pá"
+
+msgid "calendar_day_5"
+msgstr "So"
+
+msgid "calendar_day_6"
+msgstr "Ne"
+
+## Dates
+msgid "calendar_month_1"
+msgstr "Leden"
+
+msgid "calendar_month_10"
+msgstr "Říjen"
+
+msgid "calendar_month_11"
+msgstr "Listopad"
+
+msgid "calendar_month_12"
+msgstr "Prosinec"
+
+msgid "calendar_month_2"
+msgstr "Únor"
+
+msgid "calendar_month_3"
+msgstr "Březen"
+
+msgid "calendar_month_4"
+msgstr "Duben"
+
+msgid "calendar_month_5"
+msgstr "Květen"
+
+msgid "calendar_month_6"
+msgstr "Červen"
+
+msgid "calendar_month_7"
+msgstr "Červenec"
+
+msgid "calendar_month_8"
+msgstr "Srpen"
+
+msgid "calendar_month_9"
+msgstr "Září"
+

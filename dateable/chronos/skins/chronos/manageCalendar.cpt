@@ -1,0 +1,135 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/prefs_main_template/macros/master"
+      i18n:domain="plone">
+
+  <metal:block fill-slot="top_slot"
+               tal:define="dummy python:request.set('disable_border',1)" />
+
+<body>
+
+<div metal:fill-slot="prefs_configlet_main"
+     tal:define="errors python:request.get('errors', {});
+                 portal_calendar python:context.portal_calendar;
+                 first_week_day python:request.get('first_week_day', {}) or portal_calendar.getFirstWeekDay();
+                 hours_to_view python:portal_calendar.getHoursToView();
+                 hour_start python:hours_to_view[0];
+                 hour_end python:hours_to_view[1];
+                 displaymaxevents python:request.get('max-events', None) or portal_calendar.getMaxEventsToDisplay();
+                 iseventsdisplaylimited python:request.get('is-limited', None) or portal_calendar.getIsEventsDisplayLimited();
+                 dayhourheight python:request.get('day-hour-height', None) or portal_calendar.getDayHourHeight();">
+
+    <div class="configlet">
+
+    <h1 i18n:domain="chronos"
+        i18n:translate="">
+        Chronos Configuration
+    </h1>
+
+    <a href=""
+       class="link-parent"
+       tal:attributes="href string:$portal_url/plone_control_panel"
+       i18n:translate="label_up_to_plone_setup">
+        Up to Site Setup
+    </a>
+
+    <p i18n:domain="chronos"
+       i18n:translate="">
+        Configure the calendar.
+    </p>
+
+    <form method="post"
+          name="manageTopicIndex"
+          i18n:domain="chronos"
+          tal:define="errors options/state/getErrors;"
+          tal:attributes="action python:here.absolute_url()+'/'+template.id">
+
+          <input type="hidden" name="form.submitted" value="1" />
+          <input type="hidden" name="sub" value="1" />
+
+        <div>
+            <input type="checkbox"
+                   value=""
+                   name=""
+                   id=""
+                   tal:attributes="name string:first_week_day;
+                                   value python:test(first_week_day, '1', '0');
+                                   id string:first_week_day;
+                                   tabindex tabindex/next;
+                                   checked python:test(first_week_day, 'checked', None)" />
+            <span>First day of week is Sunday</span>
+        </div>
+        <br />
+        <h4>Select the start and end hours for the day view</h4>
+        <div>Start hour</div>
+        <div>
+            <select name="hour_start"
+                    id="hour_start"
+                    tal:attributes="tabindex tabindex/next;"
+                    tal:define="hours python:range(24);">
+                <option tal:repeat="hour hours"
+                        tal:content="hour"
+                        tal:attributes="value hour;
+                                        selected python:test(hour_start==hour, 'selected', None)" />
+              </select>
+        </div>
+        <div>End hour</div>
+        <div>
+            <select name="hour_end"
+                    id="hour_end"
+                    tal:attributes="tabindex tabindex/next;"
+                    tal:define="hours python:range(25);">
+                <option tal:repeat="hour hours"
+                        tal:content="hour"
+                        tal:attributes="value hour;
+                                        selected python:test(hour_end==hour, 'selected', None)" />
+              </select>
+        </div>
+        <br />
+        
+        <h4>Number of events to display on the month view:</h4>
+        <div>
+            <input type="text"
+                   tal:attributes="name string:max-events;
+                                   value displaymaxevents;
+                                   id string:max-events;
+                                   tabindex tabindex/next;" />
+            <input type="checkbox"
+                   value=""
+                   name=""
+                   id=""
+                   tal:attributes="name string:is-limited;
+                                   value python:iseventsdisplaylimited and '1' or '0';
+                                   id string:is-limited;
+                                   tabindex tabindex/next;
+                                   checked python:iseventsdisplaylimited and 'checked' or None" />
+            <span>limit the number of events to display</span>
+            
+        </div>
+        <br />
+        <h4>Hour height for the day view display:</h4>
+        <div>
+            <input type="text"
+                   tal:attributes="name string:day-hour-height;
+                                   value dayhourheight;
+                                   id string:day-hour-height;
+                                   tabindex tabindex/next;" />
+        </div>
+        <br />
+        <div>
+            <input class="context"
+                   tabindex=""
+                   type="submit"
+                   name="form.button.index_save"
+                   value="Save"
+                   i18n:domain="plone"
+                   i18n:attributes="value label_save;"
+                   tal:attributes="tabindex tabindex/next;"
+                   />
+        </div>
+
+    </form>
+    </div>
+</div>
+</body>
+</html>
