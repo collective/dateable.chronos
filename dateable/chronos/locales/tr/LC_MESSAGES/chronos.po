@@ -1,0 +1,160 @@
+# Gettext Message File for chronos.
+# H. Turgut Uyar <uyar@itu.edu.tr>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2009-06-21 13:59+0200\n"
+"Last-Translator: H. Turgut Uyar <uyar@itu.edu.tr>\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: tr\n"
+"Language-Name: Türkçe\n"
+"Preferred-Encodings: utf-8 latin5\n"
+"Domain: chronos\n"
+
+# Really short date (for strftime)
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr "%d.%m"
+
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html" define="dayurl string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};">
+#. +
+#. </a>
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr "Etkinlik ekle"
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr "Takvim Görünümleri"
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr "Chronos Yapılandırması"
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr "Chronos yapılandırıldı."
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr "Takvimi yapılandır."
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr "Gün"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Month"
+msgstr "Ay"
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr "Hepsi..."
+
+msgid "Past"
+msgstr "Geçmiş"
+
+# For event display
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr "Özel Etkinlik"
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr "Bugün"
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr "Hafta"
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr "Hafta No"
+
+#. <h2>Weeks</h2>
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr "Haftalar"
+
+#. <block>Year</block>
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr "Yıl"
+
+msgid "calendar_day_0"
+msgstr "Pt"
+
+msgid "calendar_day_1"
+msgstr "Sa"
+
+msgid "calendar_day_2"
+msgstr "Çr"
+
+msgid "calendar_day_3"
+msgstr "Pr"
+
+msgid "calendar_day_4"
+msgstr "Cu"
+
+msgid "calendar_day_5"
+msgstr "Ct"
+
+msgid "calendar_day_6"
+msgstr "Pz"
+
+## Dates
+msgid "calendar_month_1"
+msgstr "Ocak"
+
+msgid "calendar_month_10"
+msgstr "Ekim"
+
+msgid "calendar_month_11"
+msgstr "Kasım"
+
+msgid "calendar_month_12"
+msgstr "Aralık"
+
+msgid "calendar_month_2"
+msgstr "Şubat"
+
+msgid "calendar_month_3"
+msgstr "Mart"
+
+msgid "calendar_month_4"
+msgstr "Nisan"
+
+msgid "calendar_month_5"
+msgstr "Mayıs"
+
+msgid "calendar_month_6"
+msgstr "Haziran"
+
+msgid "calendar_month_7"
+msgstr "Temmuz"
+
+msgid "calendar_month_8"
+msgstr "Ağustos"
+
+msgid "calendar_month_9"
+msgstr "Eylül"
+

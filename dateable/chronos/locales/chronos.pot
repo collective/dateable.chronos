@@ -1,0 +1,155 @@
+# Dateable.chronos custom messages template
+# Lennart Regebro, 2009
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2009-06-08 13:27+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: chronos\n"
+
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr ""
+
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr ""
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr ""
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr ""
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr ""
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr ""
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr ""
+
+msgid "Past"
+msgstr ""
+
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr ""
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr ""
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr ""
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr ""
+
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr ""
+
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr ""
+
+# Short week days, i e Mo, Tu, We etc. 0 = Monday
+msgid "calendar_day_0"
+msgstr ""
+
+msgid "calendar_day_1"
+msgstr ""
+
+msgid "calendar_day_2"
+msgstr ""
+
+msgid "calendar_day_3"
+msgstr ""
+
+msgid "calendar_day_4"
+msgstr ""
+
+msgid "calendar_day_5"
+msgstr ""
+
+msgid "calendar_day_6"
+msgstr ""
+
+# These are the messages that are not found by i18ndude. Typically because they
+# are generated.
+# Long month names, i e January, February, etc.
+msgid "calendar_month_1"
+msgstr ""
+
+msgid "calendar_month_10"
+msgstr ""
+
+msgid "calendar_month_11"
+msgstr ""
+
+msgid "calendar_month_12"
+msgstr ""
+
+msgid "calendar_month_2"
+msgstr ""
+
+msgid "calendar_month_3"
+msgstr ""
+
+msgid "calendar_month_4"
+msgstr ""
+
+msgid "calendar_month_5"
+msgstr ""
+
+msgid "calendar_month_6"
+msgstr ""
+
+msgid "calendar_month_7"
+msgstr ""
+
+msgid "calendar_month_8"
+msgstr ""
+
+msgid "calendar_month_9"
+msgstr ""
+

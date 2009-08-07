@@ -1,0 +1,76 @@
+Internationalization
+====================
+
+dateable.chronos is using Zope Toolkits zope.i18n, which in turn uses gettext.
+This means the translations are located in dateable/chronos/locales. Each
+languages translations are located in a directory with the same name as the
+language code. So English is in dateable/chronos/locales/en, and Brazilian
+portugese in dateable/chronos/locales/pt_BR etc. In each language directory
+there is a subdirectory LC_MESSAGES, and in that directory are two files,
+chronos.po and chronos.mo.
+
+The chronos.po file is the source file, containing all the translations in
+plain text, and the chronos.mo file is the compiled source file, which is used
+by the application.
+
+
+Translating dateable.chronos
+----------------------------
+
+Dateable.chronos is easy to translate. All you need to do is to pick a
+chronos.po file from a language you understand, and translate it all
+msgstr "something" to your own language. Don't forget to change the headers
+with your info and the correct language codes. There are tools to help you
+with the translation, like KBabel.
+
+Then you give this file to somebody that has checkin rights in the Plone
+collective, and he/she will add this translation to dateable.chronos.
+
+
+Adding translations
+-------------------
+If you are that guy, this is what you do:
+
+You create the structure for the new language (ie 
+dateable/chronos/locales/<lang>/LC_MESSAGES and copy the new chronos.po file to
+the new LC_MESSAGES directory. You then need to compile it with
+
+    msgfmt -f -o chronos.mo chronos.po
+
+msgfmt is a part of the GNU Gettext system, so you need to install it if it
+isn't installed on your machine. Restart the server and try the translation out!
+
+
+Extending dateable.chronos
+--------------------------
+
+If you have added new words in templates that need to be translated, you need
+to recreate the chronos.pot file, the template for the chronos.po files. This
+is done by standing in dateable/chronos/ and running i18ndude. i18ndude is a
+script for helping translations of Zope software. It can be installed with
+easy_install i18ndude. For more infor see http://pypi.python.org/pypi/i18ndude
+
+The command to update the pot file is 
+
+    i18ndude rebuild-pot --pot locales/chronos.pot --merge locales/custom.pot --create chronos .
+
+If you have messages that need translated that are not discovered by i18ndude,
+add them to the file custom.pot before running the rebuild.
+
+After this you need to synchronize the templates. Start with one language:
+
+    i18ndude sync --pot locales/chronos.pot locales/XX/LC_MESSAGES/chronos.po
+
+Translate the new messages, compile with msgfmt (see above) and test it out.
+Testing is most easily done by setting the only supported language in 
+portal_languages to the language you want to test.
+
+Since all messages should be in English as default, if the only language you
+do know is English, you will not see if that message was properly translated
+or not. In that case you need to test with another language, but you can put
+in nonsens as translations, to make sure it works, and then remove that
+nonsense, once everything work. In any case, please keep the English
+translation up to date.
+
+When the translations works to your satisfaction, sync all the other languages
+as well, and notify the translators that you need an updated translation.

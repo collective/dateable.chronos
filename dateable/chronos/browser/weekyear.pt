@@ -1,0 +1,49 @@
+<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+<body metal:fill-slot="body" tal:define="numcolumns python:4">
+  <h2>
+    <a class="prevnext"
+      tal:attributes="href python:'../' + str(context.getYear() -1)">
+      &lt;&lt;
+    </a>
+
+    <tal:block i18n:translate="">Year</tal:block>
+    <span tal:replace="context/getYear">year</span>
+    
+    <a class="prevnext"
+      tal:attributes="href python:'../' + str(context.getYear() +1)">
+      &gt;&gt;
+    </a>
+  </h2>
+
+  <h3 i18n:translate="">
+  Weeks
+  </h3>
+  <table class="calendarThumbnail">
+    <tr>
+      <tal:block repeat="foo python:range(numcolumns)">
+        <td class="weekThumbnailWeekNo"/>
+        <tal:block repeat="day python:range(7)">
+          <td class="weekThumbnailHeader" i18n:translate=""
+              tal:content="python:'weekday_initial_' + str(day)"/>
+         </tal:block>
+       </tal:block>
+     </tr>
+  </table>
+
+  <table class="calendarThumbnail" 
+    tal:define="weeks context/getWeeks;
+                rows python:((len(weeks)-1)/numcolumns)+1">
+    <tr tal:repeat="row python:range(rows)">
+  
+      <tal:block define="Batch nocall:modules/ZTUtils/Batch;
+                         start python:row*numcolumns;
+                         batch python:Batch(weeks, size=numcolumns, start=start)"
+                 repeat="week_nr batch">
+        <span tal:define="week python:str(week_nr);
+                          week_object context/?week"
+              tal:content="structure week_object/@@thumbnail.html" />
+      </tal:block>
+    </tr>
+  </table>
+</body>
+</html>

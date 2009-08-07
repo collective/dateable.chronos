@@ -1,0 +1,12 @@
+[default]
+title=Chronos configuration
+
+[validators]
+
+
+[actions]
+action.success=traverse_to:string:save_manageCalendar
+action.failure=traverse_to:string:manageCalendar
+
+[security]
+View = 0:Manager

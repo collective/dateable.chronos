@@ -1,0 +1,160 @@
+# Gettext Message File for chronos.
+# Lennart Regebro <regebro@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: chronos\n"
+"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"PO-Revision-Date: 2005-07-20 13:01+0200\n"
+"Last-Translator: Lennart Regebro <regebro@gmail.com>\n"
+"Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Preferred-Encodings: latin9\n"
+"Domain: chronos\n"
+
+# Really short date (for strftime)
+#: ./browser/base_view.py:372
+msgid "%d/%m"
+msgstr "%d/%m"
+
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html" define="dayurl string:${view/getCalendarUrl}/${day/year}/${day/month}/${day/day};">
+#. +
+#. </a>
+#. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
+#. Default: "Add event"
+#: ./browser/week.pt:69
+msgid "Add event"
+msgstr "Ajouter un évènement"
+
+#. Default: "Calendar Views"
+#: ./browser/chronos_macros.pt:28
+msgid "Calendar Views"
+msgstr "Vues d'agenda"
+
+#. Default: "Chronos Configuration"
+#: ./skins/chronos/manageCalendar.cpt:24
+msgid "Chronos Configuration"
+msgstr "Configuration de Chronos"
+
+#: ./skins/chronos/save_manageCalendar.cpy:39
+msgid "Chronos reconfigured."
+msgstr "Chronos est reconfiguré"
+
+#. Default: "Configure the calendar."
+#: ./skins/chronos/manageCalendar.cpt:36
+msgid "Configure the calendar."
+msgstr "Configurer l'agenda."
+
+# The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
+# except Week that is used in the templates as well, so it is found.
+msgid "Day"
+msgstr "Jour"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Month"
+msgstr "Mois"
+
+#. Default: "More..."
+#: ./browser/month.pt:105
+msgid "More..."
+msgstr "Plus..."
+
+msgid "Past"
+msgstr ""
+
+# For event display
+#: ./browser/eventdisplay.py:62
+msgid "Private Event"
+msgstr "Privé"
+
+#. Default: "Today"
+#: ./browser/chronos_macros.pt:57
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. Default: "Week"
+#: ./browser/week.pt:44
+msgid "Week"
+msgstr "Semaine"
+
+#. Default: "Week #"
+#: ./browser/month.pt:62
+msgid "Week #"
+msgstr "Semaine #"
+
+#. <h2>Weeks</h2>
+#. Default: "Weeks"
+#: ./browser/weekyear.pt:18
+msgid "Weeks"
+msgstr "Semaines"
+
+#. <block>Year</block>
+#. Default: "Year"
+#: ./browser/weekyear.pt:9
+msgid "Year"
+msgstr "Année"
+
+msgid "calendar_day_0"
+msgstr "Lu"
+
+msgid "calendar_day_1"
+msgstr "Ma"
+
+msgid "calendar_day_2"
+msgstr "Me"
+
+msgid "calendar_day_3"
+msgstr "Je"
+
+msgid "calendar_day_4"
+msgstr "Ve"
+
+msgid "calendar_day_5"
+msgstr "Sa"
+
+msgid "calendar_day_6"
+msgstr "Di"
+
+## Dates
+msgid "calendar_month_1"
+msgstr "Janvier"
+
+msgid "calendar_month_10"
+msgstr "Octobre"
+
+msgid "calendar_month_11"
+msgstr "Novembre"
+
+msgid "calendar_month_12"
+msgstr "Décembre"
+
+msgid "calendar_month_2"
+msgstr "Février"
+
+msgid "calendar_month_3"
+msgstr "Mars"
+
+msgid "calendar_month_4"
+msgstr "Avril"
+
+msgid "calendar_month_5"
+msgstr "Mai"
+
+msgid "calendar_month_6"
+msgstr "Juin"
+
+msgid "calendar_month_7"
+msgstr "Juillet"
+
+msgid "calendar_month_8"
+msgstr "Août"
+
+msgid "calendar_month_9"
+msgstr "Septembre"
+

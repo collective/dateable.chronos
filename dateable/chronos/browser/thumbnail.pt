@@ -1,0 +1,91 @@
+<dl id="calendar-navigation"
+    class="portlet portletCalendar ploneCalendar"
+    i18n:domain="plone"
+    tal:define="dummy view/update;
+                portal_url context/@@plone_portal_state/portal_url;
+                query_string view/getQueryString;
+                url_quote_plus nocall:view/url_quote_plus;
+                showPrevMonth view/showPrevMonth;
+                showNextMonth view/showNextMonth;
+                year view/year;">
+
+    <dt class="portletHeader">
+        <span class="portletTopLeft"></span>
+        <a href="#" rel="nofollow"
+           title="Previous month"
+           tal:define="prevMonthMonth view/prevMonthMonth;
+                       prevMonthYear view/prevMonthYear"
+           tal:attributes="id python:showPrevMonth and 'calendar-previous' or '';
+                           class string:kssNavigationChange kssattr-year-${prevMonthYear} kssattr-month-${prevMonthMonth} kssattr-viewname-${view/viewname} calendarPrevious;"
+           tal:condition="showPrevMonth"
+           i18n:attributes="title title_previous_month;">&laquo;</a>
+
+        <span i18n:translate="" tal:omit-tag="">
+            <span i18n:name="monthname"
+                  tal:content="view/monthName"
+                  tal:omit-tag="">monthname</span>
+            <span i18n:name="year"
+                  tal:content="year"
+                  tal:omit-tag="">year</span>
+        </span>
+
+        <a href="#" rel="nofollow"
+           title="Next month"
+           tal:define="nextMonthMonth view/nextMonthMonth;
+                       nextMonthYear view/nextMonthYear"
+           tal:attributes="id python:showNextMonth and 'calendar-next' or '';
+                           class string:kssNavigationChange kssattr-year-${nextMonthYear} kssattr-month-${nextMonthMonth} kssattr-viewname-${view/viewname} calendarNext;"
+           tal:condition="showNextMonth"
+           i18n:attributes="title title_next_month;">&raquo;</a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem">
+        <table class="ploneCalendar"
+               summary="Calendar"
+               i18n:domain="plone"
+               i18n:attributes="summary summary_calendar;">
+            <caption class="hiddenStructure"
+                     tal:content="view/monthName">Month name</caption>
+            <thead>
+                <tr class="weekdays"
+                    ><tal:data tal:repeat="weekday view/getWeekdays"
+                        ><th scope="col"
+                             tal:content="weekday">Su</th
+                    ></tal:data>
+                </tr>
+            </thead>
+            <tbody>
+                <tr tal:repeat="week view/getEventsForCalendar"
+                    ><tal:block repeat="day week"
+                        ><tal:day define="daynumber day/day;"
+                            ><tal:isday condition="daynumber"
+                                ><tal:block define="day_event day/event;
+                                                    is_today day/is_today;
+                                                    event_class python:is_today and 'todayevent' or 'event';
+                                                    noevent_class python:is_today and 'todaynoevent' or None;
+                                                    class python:day_event and event_class or noevent_class;"
+                                    ><td class="event"
+                                        tal:attributes="class class"
+                                       ><a href=""
+                                           tal:attributes="title day/eventstring|nothing;
+                                                           href string:${context/absolute_url}/${view/viewname}?date=${day/date_string};"
+                                           tal:content="daynumber">
+                                           31
+                                       </a
+                                    ></td
+                                    ></tal:block
+                            ></tal:isday
+                            ><tal:notisday condition="not: daynumber"
+                                ><td></td
+                            ></tal:notisday
+                        ></tal:day
+                    ></tal:block>
+                </tr>
+            </tbody>
+
+        </table>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
