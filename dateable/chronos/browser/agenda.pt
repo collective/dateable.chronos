@@ -1,0 +1,67 @@
+<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+<head>
+  <metal:block fill-slot="style_slot">
+      <style type="text/css" media="all" 
+          tal:content="string:@import url(${context/absolute_url}/chronos.css);" />
+      <style type="text/css" media="all" 
+          tal:content="string:@import url(${context/absolute_url}/agenda.css);" />
+      <script type="text/javascript" src="" 
+          tal:attributes="src string:${context/++resource++chronos_support/agenda.js}"></script>
+      <script type="text/javascript" src="" 
+          tal:attributes="src string:${context/++resource++chronos_support/css-query.js}"></script>
+  </metal:block>
+</head>
+<body class="agenda">
+  <metal:block metal:fill-slot="body" tal:define="dummy view/calcInfo">
+
+    <div id="agenda-calendar">
+        
+        <!-- The calendar, rendered as a table -->
+        <!-- Hide tabs for agenda view ...
+        <div metal:use-macro="context/@@chronos_macros/calendar_view_tabs" />
+        -->
+        <metal:block define-macro="agenda_view" i18n:domain="chronos">
+    
+        <table id="agenda-week" class="ploneCalendar" summary="Calendar">
+            <colgroup id="agenda-columns">
+                <tal:block repeat="col python:view.getAgendaWeek()">
+                    <col tal:attributes="id col/abbr;title string:${col/dayname}'s events" />
+                </tal:block>
+            </colgroup>
+            <thead>
+                <tr>
+                    <th scope="col" tal:repeat="col python:view.getAgendaWeek()" 
+                                    tal:attributes="class col/extrastyleclass;
+                                                    headers col/abbr">
+                        <h3><img src="" tal:attributes="src string:${portal_url}/++resource++chronos_support/${col/abbr}.png;
+                                                        alt string:${col/dayname}:" />
+                            <span tal:attributes="title string:${col/longdate}" tal:content="col/shortdate">2/16/08</span></h3></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr><td tal:repeat="col python:view.getAgendaWeek()" tal:attributes="class col/extrastyleclass;headers col/abbr"><a href="/search/SOME_SEARCH_STRING">All of <i tal:content="string:${col/dayname}'s">Todays</i> Picks</a></td></tr>
+            </tfoot>
+            <tbody id="agenda-week" tal:define="days python:view.getAgendaEvents()">
+                <tr tal:repeat="row python:view.getAgendaMatrix(days)">
+                    <tal:loop repeat="display python:row">
+                        <td tal:define="f python: repeat['display'].start and 'first' or '';
+                                        l python: repeat['display'].end and 'last' or '';
+                                        position python: f or l or 'plain';
+                                        weekday python:repeat['display'].index;
+                                        column python:view.getAgendaWeek();
+                                        hdr python:column[weekday]['abbr']"
+                            tal:attributes="class position;
+                                            headers hdr">
+                            <div metal:use-macro="context/@@chronos_macros/standard_agenda_event" />
+                        </td>
+                    </tal:loop>
+                </tr>
+            </tbody>
+          </table>
+      
+    </metal:block>
+  </metal:block>
+  </body>
+</html>
+
+

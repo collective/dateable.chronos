@@ -1,0 +1,16 @@
+The "agenda" files adapt the weekly view of the nymag.com "Agenda" calendar.
+
+This view shows a week's events beginning with today, and defaults to listing a maximum of five events per day. The only thing notable about it, perhaps is that it takes the normal events listed by day and maps them to a matrix, which can then be read horizontally to create an html table. This may be a step backwards, in that it's not as pretty as using the css positioning of the normal weekly view, but the nymag javascript was predicated on an html table, so it was the path of least resistance.
+
+Things that need to be done:
+- General cleanup and refactoring. Like, by someone who actually knows what they are doing. ;)
+- Hover for the last two days of the week is mysteriously not working
+- JS cleanup -- Not all of the code included is relevant, I suspect.
+- Links to 'All of Today's events' doesn't work - should go to list view for chosen day.
+- If other events don't exist, the 'All...' link should change or go away.
+- The nymag.com agenda uses a primary keyword for each event (music, art, etc). I thought to implement this by looking at the parent directory of an event (so any event in the folder "art" would use that as the category), but I suspect there are other approaches.
+- New graphics.
+- Testing!
+
+Thanks!
+merckx - treyster@gmail.com

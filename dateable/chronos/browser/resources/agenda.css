@@ -1,0 +1,498 @@
+/* <tal:block define="base_properties view/getBaseProps">
+<tal:block define="dummy python:request.response.setHeader('content-type', 'text/css;; charset= iso-8859-15')" /> */
+
+/* Agenda Splash Page Styles */
+
+/*~  Layout
+----------------------------------------------------------------------*/
+#content #content-layout {
+    background: #FFF;
+}
+
+#main {
+    float: left;
+    margin-top: 6px;
+    width: 775px;
+}
+
+
+/*~  Base styles
+----------------------------------------------------------------------*/
+#agenda-calendar {
+    padding: 0 0 0 9px;
+}
+
+#agenda-calendar a {
+    color: #05A7D4;
+}
+
+#agenda-week a.more {
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+#agenda-calendar img {
+    border: none;
+}
+
+#agenda-week p {
+    margin-top: 0;
+}
+
+#agenda-calendar {
+    font: normal 10px Arial, Helvetica, Geneva, Verdana, sans-serif;
+}
+
+
+/*~  Table masthead
+----------------------------------------------------------------------*/
+#agenda-calendar .mast {
+    background: url("++resource++chronos_support/mast.gif") repeat-x 0 100%;
+    float: left;
+    padding-bottom: 6px;
+    width: 100%;
+}
+
+#agenda-calendar h2 {
+    text-align: center;
+    margin: 0 0 -60px; /* Change the last value to the height of the masthead graphic */
+}
+
+#agenda-calendar form {
+    color: #464646;
+    float: right;
+    margin-top: 15px;
+    width: 200px;
+}
+
+#agenda-calendar form p {
+    margin-top: 0;
+}
+
+#agenda-calendar label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: .4em;
+}
+
+#agenda-calendar input.text {
+    color: #898989;
+    font-size: 1.1em;
+    padding: 2px 3px;
+    width: 132px;
+    margin: 0 3px 0 0;
+}
+
+#agenda-calendar input {
+    vertical-align: bottom;
+}
+
+#agenda-calendar p.ticket-callout {
+    float: left;
+    margin: 0;
+}
+
+
+/*~  Agenda table
+----------------------------------------------------------------------*/
+#agenda-week {
+    border-collapse: collapse;
+    clear: both;
+    margin-left: 2px;
+    width: 764px;
+}
+
+#agenda-week th, #agenda-week td {
+    padding: 1em 1px 1em 7px;
+    text-align: left;
+    vertical-align: top;
+    width: 72px;
+}
+
+#agenda-week th.on, #agenda-week td.on {
+    width: 242px;
+}
+
+/*
+    Header
+*/
+#agenda-week thead th {
+    background: url("++resource++chronos_support/head.gif") no-repeat 0 100%;
+    padding-top: 0;
+}
+
+#agenda-week thead th.over, #agenda-week thead th.on {
+    background-image: url("++resource++chronos_support/head-over.gif");
+}
+
+#agenda-week thead th.first {
+    border-left: 1px solid #B8B8B8;
+    background-position: 100% 100%;
+}
+
+#agenda-week thead th.last {
+    border-right: 1px solid #B8B8B8;
+}
+
+#agenda-week th h3 {
+    background: url("++resource++chronos_support/expand.gif") no-repeat 50% 4px;
+    font-size: 2.9em;
+    font-weight: normal;
+    line-height: 23px;
+    margin: 0;
+    padding-top: 14px;
+}
+
+#agenda-week th h3 img {
+    vertical-align: bottom;
+}
+
+#agenda-week th.over h3 {
+    background-image: url("++resource++chronos_support/expand-over.gif");
+}
+
+#agenda-week th.on h3 {
+    background: none;
+}
+
+/* Inactive elements */
+#agenda-week th h3 span {
+    position: absolute;
+    left: -1000em;
+}
+
+/* "Active" elements */
+#agenda-week th.on h3 span {
+    position: static;
+}
+
+/*
+    Body
+*/
+#agenda-week tbody td {
+    background: url("++resource++chronos_support/cell.gif") no-repeat 0 100%;
+}
+
+#agenda-week tbody td.over, #agenda-week tbody td.on {
+    background-image: url("++resource++chronos_support/cell-over.gif");
+}
+
+#agenda-week tbody td.first {
+    border-left: 1px solid #B8B8B8;
+    background-position: 100% 100%;
+}
+
+#agenda-week tbody td.last {
+    border-right: 1px solid #B8B8B8;
+}
+
+/* Event header */
+#agenda-week tbody td h3 {
+    min-height: 2em;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0 4px 0 0;
+}
+
+#agenda-week tbody td h3 em {
+    background-color: #FFEB3E;
+    font-style: normal;
+    line-height: 1.0;
+    letter-spacing: .03em;
+    text-transform: uppercase;
+}
+
+#agenda-calendar .date {
+    color: #000;
+    font: normal 11px Arial, Helvetica, Verdana, Geneva, sans-serif;
+}
+
+/* Event listing */
+#agenda-week dl {
+    margin: 0;
+}
+
+#agenda-week tbody td dt {
+    font-size: 1.1em;
+    line-height: 1.1;
+    font-weight: bold;
+}
+
+#agenda-week tbody td dt a {
+    color: #464646;
+}
+
+#agenda-week tbody td dd {
+    font-size: 1.1em;
+    line-height: 1.4;
+    margin: 0;
+}
+
+#agenda-week tbody dd.venue {
+    color: #898989;
+    font-weight: bold;
+}
+
+#agenda-week tbody tr td img {
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Body: "Inactive" elements */
+#agenda-week tbody td h3 span, #agenda-week tbody td dt i,
+#agenda-week tbody td dd {
+    position: absolute;
+    left: -1000em;
+}
+
+/* Body: "Active" elements */
+#agenda-week tbody tr.first dt i,
+#agenda-week tbody td.on h3 span,
+#agenda-week tbody td.on dt i,
+#agenda-week tbody td.on dd {
+    position: static;
+}
+
+#agenda-week tbody tr.first dt i {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    margin-right: 5px;
+    width: 73px;
+}
+
+#agenda-week tbody tr.first td.on dt {
+    line-height: 1.1;
+    font-size: 1.9em;
+}
+
+#agenda-week tbody td.on dt i {
+    overflow: visible;
+    text-align: inherit;
+    width: auto;
+}
+
+#agenda-week tbody td.on dt img {
+    float: left;
+    margin-right: 7px;
+}
+
+#agenda-week tbody tr.first td.on dt img {
+    float: right;
+    margin-left: 7px;
+    margin-right: 0;
+}
+
+#agenda-week tbody td.on dt {
+    font-size: 1.3em;
+}
+
+#agenda-week tbody tr.first td.on dd.summary {
+    font-size: 1.3em;
+}
+
+#agenda-week tbody td.on dt a {
+    color: #000;
+}
+
+/*
+    Footer
+*/
+#agenda-week tfoot td {
+    background: url("++resource++chronos_support/foot.gif") no-repeat 0 100%;
+    font: bold 1.1em Georgia, "Times New Roman", Times, serif;
+}
+
+#agenda-week tfoot td a { text-decoration: none; }
+#agenda-week tfoot td a:hover { text-decoration: underline; }
+
+#agenda-week tfoot td i {
+    display: block;
+    font-style: normal;
+}
+
+#agenda-week tfoot td.over,
+#agenda-week tfoot td.on {
+    background-image: url("++resource++chronos_support/foot-over.gif");
+}
+
+#agenda-week tfoot td.first {
+    border-left: 1px solid #B8B8B8;
+    background-position: 100% 100%;
+}
+
+#agenda-week tfoot td.last {
+    border-right: 1px solid #B8B8B8;
+}
+
+#agenda-week tfoot td.on {
+    font-size: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#agenda-week tfoot td.on i {
+    display: inline;
+}
+
+/*~  Additional information
+----------------------------------------------------------------------*/
+#agenda-calendar .additional {
+    clear: both;
+    float: left;
+    font-size: 1.1em;
+    margin-top: 17px;
+    width: 100%;
+}
+
+#agenda-calendar .additional a {
+    color: #0A96BD;
+}
+
+/*
+    Layout
+*/
+#agenda-calendar .additional .column {
+    float: left;
+    margin-right: 1px;
+    width: 126px;
+}
+
+#agenda-calendar .additional .first-col {
+    width: 255px;
+}
+
+#agenda-calendar .additional .last-col {
+    margin-right: 0;
+}
+
+/*
+    Heading
+*/
+
+#agenda-calendar .additional h3 {
+    background: #63c7f8;
+    min-height: 21px;
+    margin: 0 0 11px;
+    padding: 9px 0 8px;
+}
+
+#agenda-calendar .additional h3 img {
+    padding-left: 10px;
+}
+
+/*
+    Content
+*/
+#agenda-calendar .additional .content {
+    padding-left: 10px;
+}
+
+#agenda-calendar .additional dl,
+#agenda-calendar .additional dd,
+#agenda-calendar .additional ul,
+#agenda-calendar .additional ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#agenda-calendar .additional dd,
+#agenda-calendar .additional ul,
+#agenda-calendar .additional ol {
+    line-height: 1.4;
+}
+
+#agenda-calendar .additional h4 {
+    clear: both;
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: .03em;
+    margin: 0 0 .4em;
+    text-transform: uppercase;
+}
+
+#agenda-calendar .additional h4 img {
+    float: left;
+    margin: 0 9px 10px 0;
+}
+
+#agenda-calendar .additional dt {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Featured listing */
+#agenda-calendar dl.feature {
+    margin-bottom: 1.5em;
+}
+
+#agenda-calendar dl.feature dt {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+#agenda-calendar dl.feature p {
+    margin-top: 0;
+}
+
+/* Critics' reviews */
+#agenda-calendar dl.critic {
+    margin-bottom: 1.5em;
+}
+
+#agenda-calendar dl.critic dt {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Box office listings */
+#agenda-calendar ol.box {
+    margin: 0 0 2em;
+    padding: 0;
+}
+
+#agenda-calendar ol.box li {
+    margin-left: 1.7em;
+    font-weight: bold;
+}
+
+#agenda-calendar ol.box li a {
+    font-weight: normal;
+}
+
+/* Ticket listing */
+#agenda-calendar dl.ticket {
+    margin-bottom: 2em;
+}
+
+#agenda-calendar dl.ticket p {
+    margin: 0;
+}
+
+#agenda-calendar dd.sale {
+    color: #F00;
+}
+
+/* "Your type of weekend" */
+#agenda-calendar ul.your-type a {
+    border-bottom: 1px solid #C7D8E2;
+    display: block;
+    font-weight: bold;
+    position: relative;
+    padding: 9px 0 3px;
+}
+
+#agenda-calendar ul.your-type li.first a {
+    padding-top: 0;
+}
+
+#agenda-calendar ul.your-type a cite {
+    position: absolute;
+    bottom: 3px;
+    font-style: normal;
+    left: 43px;
+}
+/* </tal:block> */

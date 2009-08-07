@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<action-icons>
+ <action-icon category="controlpanel" action_id="chronos"
+              title="Chronos Configuration" priority="0"
+              icon_expr="icon_cal_config.png"/>
+</action-icons>

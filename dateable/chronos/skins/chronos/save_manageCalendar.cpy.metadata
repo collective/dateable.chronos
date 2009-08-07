@@ -1,0 +1,5 @@
+[validators]
+
+[actions]
+action.failure=traverse_to:string:save_manageCalendar
+action.success=redirect_to:string:plone_control_panel
