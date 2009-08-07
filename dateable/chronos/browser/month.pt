@@ -1,0 +1,122 @@
+<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+<metal:block fill-slot="style_slot">
+    <style type="text/css" media="all" 
+        tal:content="string:@import url(${context/absolute_url}/chronos.css);" />
+</metal:block>
+
+<metal:block fill-slot="body" tal:define="dummy view/calcInfo">
+
+<div tal:replace="structure provider:plone.abovecontenttitle" />
+
+<h1 class="documentFirstHeading"> 
+    <metal:field use-macro="python:here.widget('title', mode='view')">
+    Title
+    </metal:field>
+</h1>
+
+<div tal:replace="structure provider:plone.belowcontenttitle" />
+
+<p class="documentDescription">
+    <metal:field use-macro="python:here.widget('description', mode='view')">
+    Description
+    </metal:field>
+</p>
+
+<div tal:replace="structure provider:plone.abovecontentbody" />
+
+<div id="chronos-calendar">
+    <!-- The calendar, rendered as a table -->
+    <div metal:use-macro="here/@@chronos_macros/calendar_view_tabs" />
+
+    <table class="ploneCalendar" summary="Calendar">
+        <thead>
+            <tr>
+                <th id="calendar-previous"
+                    colspan="2">
+                    <a href="#" rel="nofollow"
+                       title="Previous month"
+                       id="calendar-nav-previous"
+                       tal:attributes="href view/getPreviousViewUrl">&laquo;</a>    
+                </th>
+                <th colspan="5">
+                    <span tal:omit-tag="">
+                        <span i18n:translate=""
+                              tal:content="string:calendar_month_${view/month}"
+                              tal:omit-tag=""
+                              id="calendar-month-month">monthname</span>
+                        <span tal:content="view/year"
+                              tal:attributes="id string:calendar-year-${view/year};"
+                              tal:omit-tag=""
+                              id="calendar-year">year</span>
+                        <metal:block use-macro="context/@@chronos_popup/calendar" />
+                    </span>
+                </th>
+                <th id="calendar-next">
+                    <a href="#" rel="nofollow"
+                       title="Next month"
+                       id="calendar-nav-next"
+                       tal:attributes="href view/getNextViewUrl">&raquo;</a>
+                </th>
+            </tr>
+            <tr class="weekdays">
+                <th class="weekHeader" i18n:translate="">Week #</th>
+                <tal:data tal:repeat="weekday python:range(0,7)">
+		    <th class="weekday-cells" i18n:translate=""
+		      tal:content="string:calendar_day_${weekday}" />
+                </tal:data>
+            </tr>
+        </thead>
+        <tbody id="chronos-month" >
+            <tr tal:repeat="week python:range(view.weeks)">
+                <td class="weekHeader"
+                      tal:define="weekday python:view.getDateForWeekDay(week);
+                                  thisweek python:weekday.isocalendar()[1]">
+                    <a tal:attributes="href python:view.getDateUrl(weekday, 'week')"
+		       tal:content="thisweek"/>
+                  </td>
+                <tal:block repeat="weekday python:range(1,8)">
+                    <tal:block define="day python:view.getDateForWeekDay(week, weekday);
+                                       dayurl python:view.getDateUrl(day, 'day');
+                                       inMonthClass python:day.month == view.month and 'monthDay' or 'dayNotInThisMonth';
+                                       hasEventsClass python:view.getOccurrenceDisplays(day) and 'hasEvents' or '';">
+                        <td tal:attributes="class string:$inMonthClass $hasEventsClass;">
+                            <div class="add-event-block">
+	                            <a class="addEventShortcut"
+	                               title="Add event"
+	                               i18n:attributes="title"
+	                               tal:attributes="href python:view.getEventCreationLink(day)"
+	                               tal:condition="view/canCreateEvents">
+	                               <img src="add_icon.gif" />Add...
+	                            </a>
+                            </div>
+                            <a href="#" tal:attributes="href dayurl"><span tal:content="day/day" /></a>
+                        <tal:block repeat="display python:view.getOccurrenceDisplays(day)">
+                            <div class="event" tal:attributes="title display/title_and_time">
+                              <a tal:attributes="href display/url"
+                                 tal:condition="display/viewable">
+                                  <tal:block replace="display/title" />
+                              </a>
+                              <tal:block condition="not:display/viewable" 
+                                         replace="display/title"/>
+                            </div>
+                        </tal:block>
+                        <tal:block condition="python:view.hasMoreEvents(day)">
+                            <div>
+                              <a tal:attributes="href dayurl" i18n:translate="More..." i18n:domain="chronos">
+                                More...
+                              </a>
+                            </div>
+                        </tal:block>
+                            <div/>
+                        </td>
+                    </tal:block>
+                </tal:block>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div tal:replace="structure provider:plone.belowcontentbody" />
+
+</metal:block>
+</html>
+
