@@ -86,7 +86,7 @@ msgstr "Settimana"
 #. Default: "Week #"
 #: ./browser/month.pt:62
 msgid "Week #"
-msgstr "Settamana #"
+msgstr "Settimana #"
 
 #. <h2>Weeks</h2>
 #. Default: "Weeks"
@@ -156,5 +156,5 @@ msgid "calendar_month_8"
 msgstr "Agosto"
 
 msgid "calendar_month_9"
-msgstr "Settenbre"
+msgstr "Settembre"
 
