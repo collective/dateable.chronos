@@ -2,16 +2,24 @@
 dateable.chronos Changes
 =========================
 
-dateable.chronos trunk (Unreleased)
+dateable.chronos 0.6.2 (2009-09-22)
 ===================================
 
 * Added Czech translation.
   [naro]
 
+* Added Japanese translation.
+  [tyam]
+
 * Added Turkish translation (in fact this was added to 0.6.1, but not noted
   in the changes.)
-  [uyar]
+  [tyam]
 
+* Corrections to the italian translation.
+  [massimo]
+  
+* The KSS JS is now enable also for anonymous users.
+  [regebro]
 
 dateable.chronos 0.6.1 (2009-06-30)
 ===================================
