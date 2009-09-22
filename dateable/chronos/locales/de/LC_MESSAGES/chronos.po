@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: chronos\n"
 "POT-Creation-Date: 2009-06-28 11:21+0000\n"
-"PO-Revision-Date: 2009-02-03 16:31+0100\n"
+"PO-Revision-Date: 2009-09-22 16:21+0100\n"
 "Last-Translator: Andreas Kaiser <kaiser@xo7.de>\n"
 "Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -15,6 +15,9 @@ msgstr ""
 "Language-Name: German\n"
 "Preferred-Encodings: utf8\n"
 "Domain: chronos\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 # Really short date (for strftime)
 #: ./browser/base_view.py:372
@@ -33,21 +36,21 @@ msgstr "Termin hinzufügen"
 #. Default: "Calendar Views"
 #: ./browser/chronos_macros.pt:28
 msgid "Calendar Views"
-msgstr ""
+msgstr "Kalenderansichten"
 
 #. Default: "Chronos Configuration"
 #: ./skins/chronos/manageCalendar.cpt:24
 msgid "Chronos Configuration"
-msgstr ""
+msgstr "Chronos Konfiguration"
 
 #: ./skins/chronos/save_manageCalendar.cpy:39
 msgid "Chronos reconfigured."
-msgstr ""
+msgstr "Chronos neu konfiguriert"
 
 #. Default: "Configure the calendar."
 #: ./skins/chronos/manageCalendar.cpt:36
 msgid "Configure the calendar."
-msgstr ""
+msgstr "Den Kalender konfigurieren"
 
 # The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
 # except Week that is used in the templates as well, so it is found.
