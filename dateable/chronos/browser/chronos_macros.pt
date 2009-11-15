@@ -40,6 +40,9 @@
                                title tab/description">
             Tab Name
             </a></li></tal:tabs>
+                <tal:block condition="view/popup_in_tabs">
+                    <metal:block metal:use-macro="context/@@chronos_popup/calendar" />
+                </tal:block>
     </ul>
 
 </div>

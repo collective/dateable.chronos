@@ -6,8 +6,12 @@ class IPossibleCalendar(interface.Interface):
     """
 
 class ICalendarEnhanced(interface.Interface):
-    """A marker interface to indicate an item that has calendar 
-    functionality.
+    """A marker interface to indicate an item that has calendar functionality.
+    """
+
+class IListCalendarEnhanced(ICalendarEnhanced):
+    """A marker interface to indicate an item that has calendar functionality
+    and should use a list interface instead of a grid interface.
     """
 
 class ICalendarConfig(interface.Interface):

@@ -530,3 +530,6 @@ class BaseCalendarView(object):
     def localizedHour(self, hour):
         # Get the date format from the locale
         return self._getTimeFormatter().format(datetime.time(hour, 0))
+
+    def popup_in_tabs(self):
+        return False

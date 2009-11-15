@@ -78,6 +78,31 @@
      template="resources/chronos.css"
   />
 
+  <!-- List calendar views -->
+  <browser:page
+      name="month.html"
+      for="dateable.chronos.interfaces.IListCalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".events.EventListingView"
+      attribute="monthEvents"
+      />
+
+  <browser:page
+      name="week.html"
+      for="dateable.chronos.interfaces.IListCalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".events.EventListingView"
+      attribute="weekEvents"
+      />
+
+  <browser:page
+      name="day.html"
+      for="dateable.chronos.interfaces.IListCalendarEnhanced"
+      permission="dateable.chronos.ViewContent"
+      class=".events.EventListingView"
+      attribute="dayEvents"
+      />
+
   <!-- event display-->
 
   <adapter
