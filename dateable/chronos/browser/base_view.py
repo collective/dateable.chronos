@@ -4,6 +4,7 @@ import BTrees
 import datetime
 import calendar
 from Acquisition import aq_inner
+from ZTUtils import make_query
 
 from AccessControl import getSecurityManager
 from zope.interface import implements
@@ -531,5 +532,15 @@ class BaseCalendarView(object):
         # Get the date format from the locale
         return self._getTimeFormatter().format(datetime.time(hour, 0))
 
+    def get_action_url(self, action):
+        form = self.request.form.copy()
+        if '-C' in form:
+            del form['-C']
+        query = make_query(form)
+        if query:
+            return "%s?%s" % (action, query)
+        return action
+        
     def popup_in_tabs(self):
         return False
+

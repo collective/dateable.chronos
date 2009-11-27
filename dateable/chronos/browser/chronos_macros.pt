@@ -28,15 +28,14 @@
     <h5 class="hiddenStructure" i18n:translate="">Calendar Views</h5>
 
     <ul id="calendar-view-tabs"
-        tal:define="calendar_tabs view/view_tabs|nothing;
-                    mq python:modules['ZTUtils'].make_query;">
+        tal:define="calendar_tabs view/view_tabs|nothing;">
         <tal:tabs tal:repeat="tab calendar_tabs"
                   tal:condition="calendar_tabs">
           <li tal:attributes="id string:calendar_view_tab-${tab/title};
                               class python:tab.selected() and 'selected' or 'plain';">
             <a href="" 
                tal:content="tab/title"
-               tal:attributes="href python:'%s?%s' % (tab.action , mq(request.form));
+               tal:attributes="href python: view.get_action_url(tab.action);
                                title tab/description">
             Tab Name
             </a></li></tal:tabs>
