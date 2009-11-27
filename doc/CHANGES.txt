@@ -2,13 +2,20 @@
 dateable.chronos Changes
 =========================
 
-dateable.chronos 0.7.0 (unreleased)
+dateable.chronos 0.7.0 (2009-11-27)
 ===================================
 
 * Added Month/Week/Day view attributes on the event list. Also added
   IListCalendarEnhanced interface. If you mark a calendar with 
   IListCalendarEnhanced instead of ICalendarEnhanced, then these new list
   views will be used for Month/Week/Day views instead of the grid ones.
+  [regebro]
+  
+* Got rid of that annoying '-C' that pops up in some URLs when you navigates.
+  [regebro]
+  
+* Dropped official Plone 3.0 and 3.1 support. It probably still works, but
+  the buildouts have for some reason stopped working.
   [regebro]
 
 dateable.chronos 0.6.2 (2009-09-22)
