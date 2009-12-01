@@ -5,6 +5,10 @@
     i18n_domain="chronos">
 
   <i18n:registerTranslations directory="locales" />
+
+  <utility 
+      component=".chronosdomain"
+      name="chronos" />
   
   <permission
       id="zope.ManageContent"

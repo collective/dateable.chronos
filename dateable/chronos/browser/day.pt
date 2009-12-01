@@ -38,7 +38,8 @@
       <a href="#" rel="nofollow"
          title="Previous day"
          id="calendar-nav-previous"
-         tal:attributes="href view/getPreviousViewUrl">&laquo;</a>
+         tal:attributes="href view/getPreviousViewUrl"
+         i18n:attributes="title">&laquo;</a>
     </th>
     <th>
         <span tal:omit-tag=""
@@ -63,7 +64,8 @@
           <a href="#" rel="nofollow"
              title="Next day"
              id="calendar-nav-next"
-             tal:attributes="href view/getNextViewUrl">&raquo;</a>
+             tal:attributes="href view/getNextViewUrl"
+             i18n:attributes="title">&raquo;</a>
       </th>
     </tr>
     </thead>

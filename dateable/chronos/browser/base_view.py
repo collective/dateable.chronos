@@ -7,6 +7,7 @@ from Acquisition import aq_inner
 from ZTUtils import make_query
 
 from AccessControl import getSecurityManager
+from zope.i18n import translate
 from zope.interface import implements
 from zope.component import queryMultiAdapter, getAdapters, getUtility, getMultiAdapter
 from zope.contentprovider.interfaces import IContentProvider
@@ -20,7 +21,7 @@ from dateable.chronos.browser.interfaces import ICalendarView
 from dateable import kalends
 
 from zope.i18nmessageid import MessageFactory
-_ = MessageFactory("calendar")
+_ = MessageFactory("chronos")
 
 # This evilness must go:
 DAYS = [
@@ -371,7 +372,7 @@ class BaseCalendarView(object):
         return user.has_permission(permission, object)
     
     def get_short_date(self, date):
-        format = _('%d/%m')
+        format = translate(_('%d/%m'), context=self.request)
         return date.strftime(str(format))
 
     def standard_week_days(self, firstweekday=None):

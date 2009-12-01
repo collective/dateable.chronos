@@ -57,11 +57,11 @@
                                    id string:first_week_day;
                                    tabindex tabindex/next;
                                    checked python:test(first_week_day, 'checked', None)" />
-            <span>First day of week is Sunday</span>
+            <span i18n:translate="">First day of week is Sunday</span>
         </div>
         <br />
-        <h4>Select the start and end hours for the day view</h4>
-        <div>Start hour</div>
+        <h4 i18n:translate="">Select the start and end hours for the day view</h4>
+        <div i18n:translate="">Start hour</div>
         <div>
             <select name="hour_start"
                     id="hour_start"
@@ -73,7 +73,7 @@
                                         selected python:test(hour_start==hour, 'selected', None)" />
               </select>
         </div>
-        <div>End hour</div>
+        <div i18n:translate="">End hour</div>
         <div>
             <select name="hour_end"
                     id="hour_end"
@@ -87,7 +87,7 @@
         </div>
         <br />
         
-        <h4>Number of events to display on the month view:</h4>
+        <h4 i18n:translate="">Number of events to display on the month view:</h4>
         <div>
             <input type="text"
                    tal:attributes="name string:max-events;
@@ -103,11 +103,11 @@
                                    id string:is-limited;
                                    tabindex tabindex/next;
                                    checked python:iseventsdisplaylimited and 'checked' or None" />
-            <span>limit the number of events to display</span>
+            <span i18n:translate="">limit the number of events to display</span>
             
         </div>
         <br />
-        <h4>Hour height for the day view display:</h4>
+        <h4 i18n:translate="">Hour height for the day view display:</h4>
         <div>
             <input type="text"
                    tal:attributes="name string:day-hour-height;

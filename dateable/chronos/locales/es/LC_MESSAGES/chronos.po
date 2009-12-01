@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: chronos\n"
-"POT-Creation-Date: 2009-06-28 11:21+0000\n"
+"POT-Creation-Date: 2009-12-01 11:19+0000\n"
 "PO-Revision-Date: 2006-10-10 18:10+0100\n"
 "Last-Translator: Jesús Martín <jesusmartin@lasalle.es> and Israel Saeta Pérez <dukebody@gmail.com>\n"
 "Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Preferred-Encodings: latin9\n"
 "Domain: chronos\n"
 
-#: ./browser/base_view.py:372
+#: ./browser/base_view.py:375
 msgid "%d/%m"
 msgstr "%d-%m"
 
@@ -25,7 +25,7 @@ msgstr "%d-%m"
 #. </a>
 #. <a class="addEventShortcut" title="Add event" attributes="href string:${dayurl}/+/addevent.html">
 #. Default: "Add event"
-#: ./browser/week.pt:69
+#: ./browser/day.pt:49
 msgid "Add event"
 msgstr "Añadir evento"
 
@@ -53,6 +53,21 @@ msgstr "Configurar el calendario."
 msgid "Day"
 msgstr "Día"
 
+#. Default: "End hour"
+#: ./skins/chronos/manageCalendar.cpt:76
+msgid "End hour"
+msgstr ""
+
+#. Default: "First day of week is Sunday"
+#: ./skins/chronos/manageCalendar.cpt:60
+msgid "First day of week is Sunday"
+msgstr ""
+
+#. Default: "Hour height for the day view display:"
+#: ./skins/chronos/manageCalendar.cpt:110
+msgid "Hour height for the day view display:"
+msgstr ""
+
 msgid "List"
 msgstr "Lista"
 
@@ -60,30 +75,75 @@ msgid "Month"
 msgstr "Mes"
 
 #. Default: "More..."
-#: ./browser/month.pt:105
+#: ./browser/month.pt:107
 msgid "More..."
 msgstr "Más..."
 
+#. Default: "Next day"
+#: ./browser/day.pt:64
+msgid "Next day"
+msgstr ""
+
+#. Default: "Next month"
+#: ./browser/month.pt:56
+msgid "Next month"
+msgstr ""
+
+#. Default: "Next week"
+#: ./browser/week.pt:50
+msgid "Next week"
+msgstr ""
+
+#. Default: "Number of events to display on the month view:"
+#: ./skins/chronos/manageCalendar.cpt:90
+msgid "Number of events to display on the month view:"
+msgstr ""
+
 msgid "Past"
 msgstr "Pasado"
+
+#. Default: "Previous day"
+#: ./browser/day.pt:38
+msgid "Previous day"
+msgstr ""
+
+#. Default: "Previous month"
+#: ./browser/month.pt:36
+msgid "Previous month"
+msgstr ""
+
+#. Default: "Previous week"
+#: ./browser/week.pt:38
+msgid "Previous week"
+msgstr ""
 
 # For event display
 #: ./browser/eventdisplay.py:62
 msgid "Private Event"
 msgstr "Evento privado"
 
+#. Default: "Select the start and end hours for the day view"
+#: ./skins/chronos/manageCalendar.cpt:63
+msgid "Select the start and end hours for the day view"
+msgstr ""
+
+#. Default: "Start hour"
+#: ./skins/chronos/manageCalendar.cpt:64
+msgid "Start hour"
+msgstr ""
+
 #. Default: "Today"
-#: ./browser/chronos_macros.pt:57
+#: ./browser/chronos_macros.pt:59
 msgid "Today"
 msgstr "Hoy"
 
 #. Default: "Week"
-#: ./browser/week.pt:44
+#: ./browser/week.pt:45
 msgid "Week"
 msgstr "Semana"
 
 #. Default: "Week #"
-#: ./browser/month.pt:62
+#: ./browser/month.pt:64
 msgid "Week #"
 msgstr "Semana #"
 
@@ -156,4 +216,9 @@ msgstr "Agosto"
 
 msgid "calendar_month_9"
 msgstr "Septiembre"
+
+#. Default: "limit the number of events to display"
+#: ./skins/chronos/manageCalendar.cpt:106
+msgid "limit the number of events to display"
+msgstr ""
 

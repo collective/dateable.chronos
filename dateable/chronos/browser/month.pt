@@ -36,7 +36,8 @@
                     <a href="#" rel="nofollow"
                        title="Previous month"
                        id="calendar-nav-previous"
-                       tal:attributes="href view/getPreviousViewUrl">&laquo;</a>    
+                       tal:attributes="href view/getPreviousViewUrl"
+                       i18n:attributes="title">&laquo;</a>    
                 </th>
                 <th colspan="5">
                     <span tal:omit-tag="">
@@ -55,7 +56,8 @@
                     <a href="#" rel="nofollow"
                        title="Next month"
                        id="calendar-nav-next"
-                       tal:attributes="href view/getNextViewUrl">&raquo;</a>
+                       tal:attributes="href view/getNextViewUrl"
+                       i18n:attributes="title">&raquo;</a>
                 </th>
             </tr>
             <tr class="weekdays">

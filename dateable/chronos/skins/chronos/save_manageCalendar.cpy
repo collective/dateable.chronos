@@ -8,7 +8,7 @@
 ##parameters=
 ##title=Save Chronos configuration
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone import PloneMessageFactory as _
+from dateable.chronos import chronosMessageFactory as _
 
 REQUEST=context.REQUEST
 
