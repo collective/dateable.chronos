@@ -106,17 +106,17 @@ msgstr "Passé"
 #. Default: "Previous day"
 #: ./browser/day.pt:38
 msgid "Previous day"
-msgstr "Jour précédent"
+msgstr "Le jour précédent"
 
 #. Default: "Previous month"
 #: ./browser/month.pt:36
 msgid "Previous month"
-msgstr "Mois précédent"
+msgstr "Le mois précédent"
 
 #. Default: "Previous week"
 #: ./browser/week.pt:38
 msgid "Previous week"
-msgstr "Semaine précédente"
+msgstr "La semaine précédente"
 
 # For event display
 #: ./browser/eventdisplay.py:62
