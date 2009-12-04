@@ -22,7 +22,7 @@
 
 from datetime import timedelta, date
 from zope.interface import implements
-from zope.app.zapi import getMultiAdapter
+from zope.component import getMultiAdapter
 
 from Products.CMFCore.utils import getToolByName
 

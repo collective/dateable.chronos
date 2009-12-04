@@ -2,6 +2,14 @@
 dateable.chronos Changes
 =========================
 
+dateable.chronos (unreleased)
+===================================
+
+* Import getMultiAdapter from zope.component and not zope.app.zapi.
+  This works with Zope >= 2.10 [tom_gross]
+
+*
+
 dateable.chronos 0.7.0 (2009-11-27)
 ===================================
 
