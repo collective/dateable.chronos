@@ -1,5 +1,3 @@
-from time import strftime
-
 import BTrees
 import datetime
 import calendar
@@ -24,11 +22,11 @@ _ = MessageFactory("calendar")
 
 # This evilness must go:
 DAYS = [
-        'Monday', 
-        'Tuesday', 
-        'Wednesday', 
-        'Thursday', 
-        'Friday', 
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
         'Saturday',
         'Sunday',
         ]
@@ -54,17 +52,17 @@ ONEDAY = datetime.timedelta(days=1)
 
 def derive_ampmtime(timeobj):
     """Derives the 12 hour clock am/pm identifier and proper hour.
-    
+
     Some random tests.
-    
+
       >>> from datetime import time
-      
+
       >>> derive_ampmtime(time(1, 30))
       (1, 'a')
-      
+
       >>> derive_ampmtime(time(13, 30))
       (1, 'p')
-      
+
       >>> derive_ampmtime(time(12, 01))
       (12, 'p')
 
@@ -215,7 +213,6 @@ def monthweeks(year=None, month=None, daydate=None, firstweekday=None):
                            firstcalday.day) != firstweekday:
         firstcalday -= ONEDAY
     
-    done = False
     weeks = []
     day = firstcalday
     nextday = day + ONEDAY

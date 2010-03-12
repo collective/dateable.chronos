@@ -20,7 +20,7 @@
   interfaces.py
 """
 from zope.interface import Interface
-from zope.schema import Int, Date, Datetime, TextLine, Text, Bool, Choice, Set
+from zope.schema import Int, Date
 from zope.viewlet.interfaces import IViewletManager
 
 from zope.i18nmessageid import MessageFactory
@@ -36,20 +36,20 @@ class IUnPositionedView(ICalendarView):
 
 class IPositionedView(ICalendarView):
     """A view that uses absolute positioning to render events"""
-    
-    width = Int(title=u"Width", 
+
+    width = Int(title=u"Width",
                 description=u"The total width of the view")
-    
-    height = Int(title=u"Height", 
+
+    height = Int(title=u"Height",
                 description=u"The total height of the view")
-    
+
     first_day = Date(title=u"First Day",
                      description=u"The first day of the view")
-    
-    days = Int(title=u"Days", 
+
+    days = Int(title=u"Days",
                description=u"The number of days shown")
 
-    from_hour = Int(title=u"From hour", 
+    from_hour = Int(title=u"From hour",
                     description=u"The time at the top of the view")
 
     to_hour = Int(title=u"To hour",
@@ -59,9 +59,9 @@ class IPositionedView(ICalendarView):
 class IEventPosition(Interface):
     """An events position
 
-    Contains the information needed to properly display an event on a 
+    Contains the information needed to properly display an event on a
     IPositionedView."""
-    
+
     def getCssPositionString():
         """Returns a properly formatted css-style position string.
 
@@ -72,9 +72,9 @@ class IEventPosition(Interface):
 class IEventDisplay(Interface):
     """An events display information
 
-    Contains the information needed to properly display an event on a 
+    Contains the information needed to properly display an event on a
     IPositionedView."""
-    
+
     def getCssPositionString():
         """Returns a properly formatted css-style position string.
 
@@ -85,14 +85,14 @@ class IEventDisplay(Interface):
     def getCssStatusClass(self):
         """Returns a CSS class name according to the status of this event
         for the current user attendee (if there is one). Possible classes are:
-            
+
             need-action
             accepted
             declined
             tentative
             delegated
             <empty>
-            
+
         It is up to the actual stylesheet to do something with this class.
         """
 

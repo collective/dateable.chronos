@@ -29,7 +29,6 @@ from Products.CMFCore.utils import getToolByName
 from displaytable import DayGrid
 from interfaces import IPositionedView, IEventDisplay
 
-from dateable import kalends
 from base_view import BaseCalendarView
 
 from zope.i18nmessageid import MessageFactory
@@ -40,7 +39,7 @@ CALENDAR_WIDTH = 738
 
 class DayView(BaseCalendarView):
     """Holds the rendering information for day views"""
-    
+
     implements(IPositionedView)
 
     def __getitem__(self, key):
@@ -59,7 +58,7 @@ class DayView(BaseCalendarView):
         p_cal = getToolByName(self.context, 'portal_calendar')
         self.from_hour = p_cal.hour_start
         self.to_hour = p_cal.hour_end
-        
+
         self.hour_count = self.to_hour - self.from_hour
 
         # We might want to make this more flexible for different layouts
@@ -72,31 +71,29 @@ class DayView(BaseCalendarView):
         self.before_line = False
         self.after_line = False
         if self.from_hour > 0:
-            self.height = self.height  + self.hour_height 
+            self.height = self.height  + self.hour_height
             self.before_line = True
         if self.to_hour < 23:
-            self.height = self.height  + self.hour_height 
+            self.height = self.height  + self.hour_height
             self.after_line = True
 
     def getDate(self):
         return self.first_day
-    
+
     def getDays(self):
         return [self.getDate()]
-        
+
     def getEventDisplays(self):
         """ gathers event-like objects from an event provider """
-        provider = kalends.IEventProvider(self.context)
-        
         occurrences = self.getOccurrencesInDay(self.today)
         displays = [getMultiAdapter([occurrence, self], IEventDisplay)
                   for occurrence in occurrences]
-        
+
         # Handle overlapping displays:
         daygrid = DayGrid(0, 0, self.height, self.day_width)
         daygrid.extend(displays)
         daygrid.flatten()
-        
+
         return daygrid
 
     def getTodayInfo(self):
@@ -105,8 +102,8 @@ class DayView(BaseCalendarView):
             istoday = True
         else:
             istoday = False
-        return {'year': today.year, 
-                'month': today.month, 
+        return {'year': today.year,
+                'month': today.month,
                 'day': today.day,
                 'istoday': istoday}
 

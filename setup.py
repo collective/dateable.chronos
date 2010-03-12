@@ -1,5 +1,4 @@
 from setuptools import setup, find_packages
-import sys, os
 
 f = open('dateable/chronos/version.txt')
 version = f.read().strip()

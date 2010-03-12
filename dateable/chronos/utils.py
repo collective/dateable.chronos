@@ -1,6 +1,5 @@
 import calendar
 from datetime import date
-from time import strftime
 
 
 def get_view_day(request):
@@ -45,11 +44,11 @@ def set_view_day(request, day):
 
 def localTimeFormatFromLocalDateTimeFormat(format):
     """Derive a time-only format from a format string possibly including both time and date tokens.
-    
+
     Needed because there's no apparent definition of a localized time format string (apart from format strings that mix in date as well) in Plone < 3.2. Algorithm: find each strftime substitution token (like %S) and decide whether it conveys any time information (seconds, minutes, etc.). Keep the time-like tokens, and discard the date-like ones. Also keep any characters between successive time-like tokens. Discard leading and trailing characters.
     """
     # TODO: If we end up butting two tokens up against each other, insert a space between them.
-    
+
     chunks = format.split('%')[1:]  # Always throw away the first chunk. Whether we keep or discard prefixes and suffixes, we have to do the same for both to support right-to-left and left-to-right languages.
     kill = 'aAbBdjmUwWxyY'  # date-like tokens
     limbo = ''  # chars between tokens

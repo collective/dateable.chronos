@@ -1,14 +1,13 @@
 from time import localtime
 
 from zope.interface import implements
-from zope.component import getAdapters, getMultiAdapter
+from zope.component import getMultiAdapter
 from zope.i18nmessageid import MessageFactory
 from zope.viewlet.interfaces import IViewlet, IViewletManager
 
 from kss.core import KSSView, kssaction
 
 from Acquisition import aq_inner
-from DateTime import DateTime
 
 from Products.PythonScripts.standard import url_quote_plus
 from Products.Five.browser import BrowserView
@@ -16,20 +15,18 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 
-from interfaces import INavigation
-
 PLMF = MessageFactory('plonelocales')
 
 class NavigationView(KSSView):
-    
+
     @kssaction
     def navigationChange(self, month, year, viewname):
         core = self.getCommandSet('core')
         manager = getMultiAdapter((core.context, core.request, core.view,),
                                   IViewletManager, name='chronos.navigation')
         renderer = getMultiAdapter(
-            (core.context, core.request, core.view, manager), 
-            IViewlet, 
+            (core.context, core.request, core.view, manager),
+            IViewlet,
             name='chronos.ajaxnavigation'
         )
         renderer = renderer.__of__(self.context)
@@ -37,13 +34,13 @@ class NavigationView(KSSView):
 
         result = renderer.render()
         core.replaceInnerHTML('#chronosPopupCalendar', result)
-        
+
 
 # This is a mildly modified copy of the standard plone calendar portlet:
 class ThumbnailMonth(BrowserView):
 
     implements(IViewlet)
-    
+
     render = ViewPageTemplateFile('thumbnail.pt')
 
     updated = False
@@ -55,12 +52,12 @@ class ThumbnailMonth(BrowserView):
         self.request = request
         self.view = view
         self.manager = manager
-    
+
     def update(self, month=None, year=None, viewname=None):
         if self.updated:
             return
         self.updated = True
-        
+
         if viewname is None:
             viewname = self.view.__name__
         self.viewname = viewname
@@ -91,7 +88,6 @@ class ThumbnailMonth(BrowserView):
 
 
     def getEventsForCalendar(self):
-        context = aq_inner(self.context)
         year = self.year
         month = self.month
         weeks = self.calendar.getEventsForCalendar(month, year)
@@ -102,7 +98,6 @@ class ThumbnailMonth(BrowserView):
                     continue
                 day['is_today'] = self.isToday(daynumber)
                 day['date_string'] = '%s-%s-%s' % (year, month, daynumber)
-
         return weeks
 
     def getEventString(self, event):
@@ -199,4 +194,3 @@ class ThumbnailMonth(BrowserView):
             query_string = '%s&amp;' % query_string
         return query_string
 
-    

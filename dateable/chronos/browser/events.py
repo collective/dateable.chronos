@@ -15,13 +15,12 @@ from base_view import BaseCalendarView
 class EventListingView(BaseCalendarView):
     """View that lists events.
     """
-    
+
     eventlist = PageTemplateFile('events.pt')
-    
+
     def _getEventList(self, start=None, stop=None):
         provider = kalends.IEventProvider(self.context)
-        now = datetime.datetime.now()
-        events = list(provider.getOccurrences(start=start, stop=stop, 
+        events = list(provider.getOccurrences(start=start, stop=stop,
                                              **self.request.form))
         events.sort()
         months = []
@@ -51,9 +50,9 @@ class EventListingView(BaseCalendarView):
 
         if month_info:
             months.append(month_info)
-            
+
         return months
-        
+
     def upcomingEvents(self):
         """Show all upcoming events"""
         now = datetime.datetime.now()
@@ -82,8 +81,6 @@ class EventListingView(BaseCalendarView):
 
     def weekEvents(self):
         """Show all events for a particular week"""
-        month = self.default_day.month
-        year = self.default_day.year
         start = isoweek.weeknr2datetime(self.default_day.year, self.week(), 1)
         stop = start + datetime.timedelta(7)
         months = self._getEventList(start=start,stop=stop)
@@ -100,14 +97,14 @@ class EventListingView(BaseCalendarView):
         # The popup needs to be in the tabs for the list views,
         # but it makes no sense for the list and past view:
         return self.__name__ not in (u'list.html', u'past.html')
-    
+
     def url(self, start=None, stop=None):
         provider = kalends.IWebEventCreator(self.context)
         return provider.url(start, stop)
 
     def render_filter(self):
         provider = queryMultiAdapter(
-            (self.context, self.request, self), 
+            (self.context, self.request, self),
             IContentProvider, 'eventfilter')
         if provider is None:
             return ''
