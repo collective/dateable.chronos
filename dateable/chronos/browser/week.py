@@ -101,8 +101,8 @@ class WeekView(BaseCalendarView):
             
     def getEventDisplays(self):
         all_displays = []
-        for d in self.context.getWeekdays():
-            day = self.context.getDateForWeekday(d)
+        for d in self.getWeekdays():
+            day = self.getDateForWeekday(d)
             self.column_day = day
             occurrences = self.getOccurrencesInDay(day)
             displays = [getMultiAdapter([occurrence, self], IEventDisplay) for
