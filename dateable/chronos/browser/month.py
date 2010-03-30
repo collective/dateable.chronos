@@ -43,17 +43,17 @@ class MonthView(BaseCalendarView):
         self.month = self.default_day.month
 
         # store the start date of the month
-        self.monthstart = date(self.year, self.month, 1)
+        month_start = date(self.year, self.month, 1)
         # calculate the start date of the next month
-        if self.month == 12:
-            self.nextmonth = date(self.year+1, 1, 1)
-        else:
-            self.nextmonth = date(self.year, self.month +1, 1)
+        month_end = date(self.year, self.month, calendar.monthrange(self.year, self.month)[1])
         
-        # first monday to be displayed
-        self.begins = self.monthstart - timedelta(self.monthstart.weekday())
-        # last sunday to be displayed
-        self.ends = self.nextmonth + timedelta(6 - self.nextmonth.weekday())
+        # First date to be displayed
+        days_before = self.daysUntil(self.firstweekday, month_start.weekday())
+        self.begins = month_start - timedelta(days_before)
+        # Last date to be displayed
+        days_after = self.daysUntil(month_end.weekday(), self.lastweekday)
+        self.ends = month_end + timedelta(days_after)
+
         # amount of weeks to display
         self.weeks = int(((self.ends - self.begins).days + 1) / 7)
 

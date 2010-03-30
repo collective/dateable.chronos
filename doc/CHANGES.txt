@@ -5,6 +5,10 @@ dateable.chronos Changes
 dateable.chronos (unreleased)
 ===================================
 
+* Made day, week and month views respect the calendar tool's first
+  day of week setting.
+  [yomatters]
+
 * Import getMultiAdapter from zope.component and not zope.app.zapi.
   This works with Zope >= 2.10 [tom_gross]
 

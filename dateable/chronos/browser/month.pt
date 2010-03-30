@@ -60,7 +60,7 @@
             </tr>
             <tr class="weekdays">
                 <th class="weekHeader" i18n:translate="">Week #</th>
-                <tal:data tal:repeat="weekday python:range(0,7)">
+                <tal:data tal:repeat="weekday view/getWeekdayNumbers">
 		    <th class="weekday-cells" i18n:translate=""
 		      tal:content="string:calendar_day_${weekday}" />
                 </tal:data>

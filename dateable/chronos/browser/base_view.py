@@ -333,16 +333,43 @@ class BaseCalendarView(object):
 
     def __set_firstweekday(self, firstweekday):
         self._firstweekday = firstweekday
+        
     def __get_firstweekday(self):
         first = getattr(self, '_firstweekday', None)
         if first is not None:
             return first
-        first = int(self.request.form.get('firstweekday', 
-                                          calendar.firstweekday()))
-        self._firstweekday = first
-        return first
+        first = self.request.form.get('firstweekday', None)
+        if first is None:
+            calendar_tool = getToolByName(self.context, 'portal_calendar')
+            first = calendar_tool.getFirstWeekDay()
+        self._firstweekday = int(first)
+        return int(first)
     
     firstweekday = property(__get_firstweekday, __set_firstweekday)
+    
+    @property
+    def lastweekday(self):
+        first = self.firstweekday
+        if first == 0:
+            return 6
+        return first - 1
+        
+    def daysUntil(self, first_weekday, second_weekday):
+        """
+        Calculates the number of days from one weekday until another weekday.
+        """
+
+        difference = second_weekday - first_weekday
+        if difference < 0:
+            difference += 7
+        return difference
+
+    def getWeekdayNumbers(self):
+        """
+        Returns a list of the day of week numbers in order.
+        """
+
+        return range(self.firstweekday, 7) + range(0, self.firstweekday)
     
     def view_tabs(self):
         """ Returns the list of views to build the view tabs with """

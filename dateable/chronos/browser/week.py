@@ -55,17 +55,17 @@ class WeekView(BaseCalendarView):
     def next_long_link(self):
         return self.next_month_link()
 
-    def getWeekdays(self):
-        return range(1, 8)
-
     def getDateForWeekday(self, weekday):
-        return isoweek.weeknr2datetime(self.year, self.week, weekday)
+        days_before = self.daysUntil(self.firstweekday, self.default_day.weekday())
+        week_begins = self.default_day - timedelta(days_before)
+        
+        offset = self.daysUntil(self.firstweekday, weekday)
+        return week_begins + timedelta(offset)
     
     def calcInfo(self):
         self.calendar = self.context
-        self.week = self.week()
         self.year = int(self.year())
-        self.first_day = self.column_day = self.getDateForWeekday(1)
+        self.first_day = self.column_day = self.getDateForWeekday(self.firstweekday)
         self.month = self.first_day.month
         # self.ends is the day after the last day
         self.ends = self.first_day + timedelta(8)
@@ -97,11 +97,11 @@ class WeekView(BaseCalendarView):
 
     def getDays(self):
         return [self.getDateForWeekday(d) 
-                for d in self.getWeekdays()]
+                for d in self.getWeekdayNumbers()]
             
     def getEventDisplays(self):
         all_displays = []
-        for d in self.getWeekdays():
+        for d in self.getWeekdayNumbers():
             day = self.getDateForWeekday(d)
             self.column_day = day
             occurrences = self.getOccurrencesInDay(day)
@@ -109,7 +109,7 @@ class WeekView(BaseCalendarView):
                         occurrence in occurrences]
             
             # Handle overlapping displays:
-            daygrid = DayGrid(0, self.day_width * (d-1), 
+            daygrid = DayGrid(0, self.day_width * (self.daysUntil(self.firstweekday, d)), 
                                  self.height,
                                  self.day_width)
             daygrid.extend(displays)
