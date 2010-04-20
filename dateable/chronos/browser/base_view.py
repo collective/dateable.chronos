@@ -18,7 +18,7 @@ from dateable.chronos.browser.interfaces import ICalendarView
 from dateable import kalends
 
 from zope.i18nmessageid import MessageFactory
-_ = MessageFactory("calendar")
+_ = MessageFactory("chronos")
 
 # This evilness must go:
 DAYS = [
@@ -396,7 +396,8 @@ class BaseCalendarView(object):
     
     def get_short_date(self, date):
         format = _('%d/%m')
-        return date.strftime(str(format))
+        localized_format = self.context.translate(format)
+        return date.strftime(str(localized_format))
 
     def standard_week_days(self, firstweekday=None):
         """Return the standard days of the week starting with the day

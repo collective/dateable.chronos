@@ -5,6 +5,9 @@ dateable.chronos Changes
 dateable.chronos (unreleased)
 ===================================
 
+* Made short date use localized format.
+  [yomatters]
+
 * Made day, week and month views respect the calendar tool's first
   day of week setting.
   [yomatters]
