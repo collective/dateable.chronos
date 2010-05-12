@@ -17,6 +17,8 @@ dateable.chronos (unreleased)
 
 * Added Dutch translation.
   [WouterVH]
+  
+* Plone 4 compatibility with IDynamicallyViewable import
 
 
 dateable.chronos 0.7.0 (2009-11-27)

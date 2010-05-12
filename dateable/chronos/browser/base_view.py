@@ -11,7 +11,11 @@ from zope.contentprovider.interfaces import IContentProvider
 from zope.app.publisher.interfaces.browser import IBrowserMenu
 
 from Products.CMFCore.utils import getToolByName
-from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
+try:
+    from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
+except:
+    from Products.CMFDynamicViewFTI.interfaces import ISelectableBrowserDefault as IDynamicallyViewable
+    
 from dateable.chronos import utils
 from dateable.chronos.browser.interfaces import ICalendarView
 
