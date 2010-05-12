@@ -2,12 +2,7 @@ from zope.interface import implements
 from zope.component import adapts
 from dateable.chronos.interfaces import ICalendarEnhanced
 
-try:
-    from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
-except:
-    from Products.CMFDynamicViewFTI.interfaces import ISelectableBrowserDefault as IDynamicallyViewable
-
-# XXX This seems to not be used. But it should be, I think.
+from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
 
 class CalendarDynamicViews(object):
     
