@@ -1,4 +1,9 @@
-<html metal:use-macro="context/main_template/macros/master" i18n:domain="chronos">
+<html 
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    metal:use-macro="context/main_template/macros/master" 
+    i18n:domain="chronos">
 <head>
   <metal:block fill-slot="style_slot">
       <style type="text/css" media="all" 
@@ -38,7 +43,7 @@
       <a href="#" rel="nofollow"
          title="Previous day"
          id="calendar-nav-previous"
-         tal:attributes="href view/getPreviousViewUrl">&laquo;</a>
+         tal:attributes="href view/getPreviousViewUrl">&#171;</a>
     </th>
     <th>
         <span tal:omit-tag=""
@@ -54,16 +59,13 @@
                 +
               </a>
               <metal:block use-macro="context/@@chronos_popup/calendar" />
-              <tal:block tal:replace='structure string:<script type="text/javascript">' />
-                  
-              <tal:block replace="structure string:</script>" />
           </span>
     </th>
       <th id="calendar-next">
           <a href="#" rel="nofollow"
              title="Next day"
              id="calendar-nav-next"
-             tal:attributes="href view/getNextViewUrl">&raquo;</a>
+             tal:attributes="href view/getNextViewUrl">&#187;</a>
       </th>
     </tr>
     </thead>
@@ -124,6 +126,7 @@
   </tr>
   </tbody>
 </table>
+</div>
 <div tal:replace="structure provider:plone.belowcontentbody" />
 
 </metal:block>
