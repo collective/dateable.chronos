@@ -1,5 +1,5 @@
-/* <tal:block define="base_properties view/getBaseProps">
-<tal:block define="dummy python:request.response.setHeader('content-type', 'text/css;; charset= iso-8859-15')" /> */
+<tal:block define="base_properties view/getBaseProps">
+/*<tal:block define="dummy python:request.response.setHeader('content-type', 'text/css;; charset= iso-8859-15')" /> */
 
 /* This style sheet still needs to be trimmed down further */
 

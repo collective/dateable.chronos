@@ -64,9 +64,9 @@
                                                     is_today day/is_today;
                                                     event_class python:is_today and 'todayevent' or 'event';
                                                     noevent_class python:is_today and 'todaynoevent' or None;
-                                                    class python:day_event and event_class or noevent_class;"
+                                                    cellclass python:day_event and event_class or noevent_class;"
                                     ><td class="event"
-                                        tal:attributes="class class"
+                                        tal:attributes="class cellclass"
                                        ><a href=""
                                            tal:attributes="title day/eventstring|nothing;
                                                            href string:${context/absolute_url}/${view/viewname}?date=${day/date_string};"
