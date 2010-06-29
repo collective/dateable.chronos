@@ -29,26 +29,26 @@ msgstr "%d/%m"
 #. Default: "Add event"
 #: ./browser/week.pt:69
 msgid "Add event"
-msgstr "Toevoegen gebeurtenis"
+msgstr "Evenement toevoegen"
 
 #. Default: "Calendar Views"
 #: ./browser/chronos_macros.pt:28
 msgid "Calendar Views"
-msgstr "Kalender Views"
+msgstr "Kalender weergaves"
 
 #. Default: "Chronos Configuration"
 #: ./skins/chronos/manageCalendar.cpt:24
 msgid "Chronos Configuration"
-msgstr "Chronos Configuratie"
+msgstr "Chronos instellingen"
 
 #: ./skins/chronos/save_manageCalendar.cpy:39
 msgid "Chronos reconfigured."
-msgstr "Chronos geherconfigureerd."
+msgstr "Chronos opnieuw ingesteld."
 
 #. Default: "Configure the calendar."
 #: ./skins/chronos/manageCalendar.cpt:36
 msgid "Configure the calendar."
-msgstr "Configureer de kalender."
+msgstr "Stel de kalender in."
 
 # The view tabs are menu items, and defines in ZCML. i18ndude doesn't find them,
 # except Week that is used in the templates as well, so it is found.
@@ -72,7 +72,7 @@ msgstr "Voorbij"
 # For event display
 #: ./browser/eventdisplay.py:62
 msgid "Private Event"
-msgstr "Private Gebeurtenis"
+msgstr "Privaat evenement"
 
 #. Default: "Today"
 #: ./browser/chronos_macros.pt:57
@@ -108,54 +108,54 @@ msgid "calendar_day_1"
 msgstr "Di"
 
 msgid "calendar_day_2"
-msgstr "Wo"
+msgstr "Woe"
 
 msgid "calendar_day_3"
 msgstr "Do"
 
 msgid "calendar_day_4"
-msgstr "Vr"
+msgstr "Vrij"
 
 msgid "calendar_day_5"
-msgstr "Za"
+msgstr "Zat"
 
 msgid "calendar_day_6"
-msgstr "Zo"
+msgstr "Zon"
 
 ## Dates
 msgid "calendar_month_1"
-msgstr "Januari"
+msgstr "januari"
 
 msgid "calendar_month_10"
-msgstr "Oktober"
+msgstr "oktober"
 
 msgid "calendar_month_11"
-msgstr "November"
+msgstr "november"
 
 msgid "calendar_month_12"
-msgstr "December"
+msgstr "december"
 
 msgid "calendar_month_2"
-msgstr "Februari"
+msgstr "februari"
 
 msgid "calendar_month_3"
-msgstr "Maart"
+msgstr "maart"
 
 msgid "calendar_month_4"
-msgstr "April"
+msgstr "april"
 
 msgid "calendar_month_5"
-msgstr "Mei"
+msgstr "mei"
 
 msgid "calendar_month_6"
-msgstr "Juni"
+msgstr "juni"
 
 msgid "calendar_month_7"
-msgstr "Juli"
+msgstr "juli"
 
 msgid "calendar_month_8"
-msgstr "Augustus"
+msgstr "augustus"
 
 msgid "calendar_month_9"
-msgstr "September"
+msgstr "september"
 
