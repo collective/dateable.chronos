@@ -2,6 +2,12 @@
 dateable.chronos Changes
 =========================
 
+0.7.2 (unreleased)
+==================
+
+- Nothing changed yet.
+
+
 dateable.chronos 0.7.1 (2010-08-01)
 ===================================
 
