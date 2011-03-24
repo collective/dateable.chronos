@@ -17,6 +17,8 @@ from dateable.chronos.browser.interfaces import ICalendarView
 
 from dateable import kalends
 
+from Products.Five.browser import BrowserView
+
 from zope.i18nmessageid import MessageFactory
 _ = MessageFactory("calendar")
 
@@ -284,7 +286,7 @@ class ViewableDay(object):
         return len(self._eventset) > 2
 
 
-class BaseCalendarView(object):
+class BaseCalendarView(BrowserView):
     """Base view for the calendar views.
     """
     
