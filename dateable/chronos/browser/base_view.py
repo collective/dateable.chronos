@@ -310,7 +310,7 @@ class BaseCalendarView(BrowserView):
 
     def _set_default_day(self, defaultday):
         self._default_day = defaultday
-        utils.set_view_day(self.REQUEST, defaultday)
+        utils.set_view_day(self.request, defaultday)
 
     def _get_default_day(self):
         if hasattr(self, '_default_day'):
