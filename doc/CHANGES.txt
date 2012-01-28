@@ -5,6 +5,9 @@ dateable.chronos Changes
 0.7.2 (unreleased)
 ==================
 
+- fix AttributeError in base_view.py
+  [iElectric]
+
 - make views subclass Products.Five.browser.BrowserView so that their templates
   can be customized through portal_view_customizations
   [swampmonkey]
