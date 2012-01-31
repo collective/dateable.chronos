@@ -37,6 +37,7 @@ setup(name='dateable.chronos',
           'dateable.kalends >= 0.4',
       ],
       entry_points="""
-      # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
       )
