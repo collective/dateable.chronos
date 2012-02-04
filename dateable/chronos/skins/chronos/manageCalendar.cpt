@@ -55,7 +55,6 @@
                    tal:attributes="name string:first_week_day;
                                    value python:test(first_week_day, '1', '0');
                                    id string:first_week_day;
-                                   tabindex tabindex/next;
                                    checked python:test(first_week_day, 'checked', None)" />
             <span>First day of week is Sunday</span>
         </div>
@@ -65,7 +64,6 @@
         <div>
             <select name="hour_start"
                     id="hour_start"
-                    tal:attributes="tabindex tabindex/next;"
                     tal:define="hours python:range(24);">
                 <option tal:repeat="hour hours"
                         tal:content="hour"
@@ -77,7 +75,6 @@
         <div>
             <select name="hour_end"
                     id="hour_end"
-                    tal:attributes="tabindex tabindex/next;"
                     tal:define="hours python:range(25);">
                 <option tal:repeat="hour hours"
                         tal:content="hour"
@@ -92,8 +89,7 @@
             <input type="text"
                    tal:attributes="name string:max-events;
                                    value displaymaxevents;
-                                   id string:max-events;
-                                   tabindex tabindex/next;" />
+                                   id string:max-events; " />
             <input type="checkbox"
                    value=""
                    name=""
@@ -101,7 +97,6 @@
                    tal:attributes="name string:is-limited;
                                    value python:iseventsdisplaylimited and '1' or '0';
                                    id string:is-limited;
-                                   tabindex tabindex/next;
                                    checked python:iseventsdisplaylimited and 'checked' or None" />
             <span>limit the number of events to display</span>
             
@@ -112,8 +107,7 @@
             <input type="text"
                    tal:attributes="name string:day-hour-height;
                                    value dayhourheight;
-                                   id string:day-hour-height;
-                                   tabindex tabindex/next;" />
+                                   id string:day-hour-height;" />
         </div>
         <br />
         <div>
@@ -124,7 +118,6 @@
                    value="Save"
                    i18n:domain="plone"
                    i18n:attributes="value label_save;"
-                   tal:attributes="tabindex tabindex/next;"
                    />
         </div>
 
