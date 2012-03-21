@@ -1,3 +1,4 @@
+import sys
 import BTrees
 import datetime
 import calendar
@@ -11,12 +12,12 @@ from zope.contentprovider.interfaces import IContentProvider
 from zope.app.publisher.interfaces.browser import IBrowserMenu
 
 from Products.CMFCore.utils import getToolByName
-try:
-# Plone 4
-    from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation as IDynamicallyViewable
-except:
-# Plone 3
+if sys.version_info < (2, 6):
+    # Plone 3
     from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
+else:
+    # Plone 4
+    from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation as IDynamicallyViewable
 
 from dateable.chronos import utils
 from dateable.chronos.browser.interfaces import ICalendarView
