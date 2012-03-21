@@ -1,4 +1,5 @@
 import calendar
+import re
 from datetime import date
 
 
@@ -15,7 +16,7 @@ def get_view_day(request):
     if 'date' in request.form:
         # A new date was passed in. Switch date:
         date_str = request.form['date']
-        if not date_str:
+        if not date_str or not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
             # The string as empty: Return today.
             return date.today()
         year, month, day = date_str.split('-')
