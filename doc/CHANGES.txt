@@ -12,6 +12,8 @@ dateable.chronos Changes
   can be customized through portal_view_customizations
   [swampmonkey]
 
+- Fixed a XSS vulnerability in the get_view_day method
+  [keul]
 
 dateable.chronos 0.7.1 (2010-08-01)
 ===================================

@@ -1,13 +1,14 @@
+import sys
 from zope.interface import implements
 from zope.component import adapts
 from dateable.chronos.interfaces import ICalendarEnhanced
 
-try:
-# Plone 4
-    from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation as IDynamicallyViewable
-except:
-# Plone 3
+if sys.version_info < (2, 6):
+    # Plone 3
     from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
+else:
+    # Plone 4
+    from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation as IDynamicallyViewable
 
 
 # XXX This seems to not be used. But it should be, I think.
