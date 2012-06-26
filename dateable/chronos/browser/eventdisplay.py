@@ -25,7 +25,7 @@ from zope.interface import implements
 from zope.i18nmessageid import MessageFactory
 _ = MessageFactory("calendar")
 
-from p4a.common import dtutils
+import dtutils
 
 from displaytable import Cell
 from interfaces import IEventDisplay
@@ -79,14 +79,14 @@ class PositionedEventDisplay(EventDisplay):
         View must be a IPositionedView.
         """
         EventDisplay.__init__(self, event, view)
-        
+
         # Get the local timezone
         self.tz = dtutils.gettz()
-        
+
         event_begins = event.start
         event_ends = event.end
         column_day = view.column_day
-        
+
         first_day = view.first_day
         if isinstance(first_day, datetime):
             first_day = first_day.date()
@@ -125,7 +125,7 @@ class PositionedEventDisplay(EventDisplay):
         self.top = (self.startpos.seconds * view.hour_height) / 3600
         duration = self.endpos - self.startpos
         self.height = ((duration.seconds or duration.days * (3600 *24)) * view.hour_height) / 3600
-        
+
         if self.height < 20:
             # Increase height, but not if we already hit the end of the day:
             max = (2 + view.to_hour - view.from_hour) * view.hour_height
