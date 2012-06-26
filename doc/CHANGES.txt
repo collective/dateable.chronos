@@ -8,6 +8,9 @@ dateable.chronos Changes
 - fix AttributeError in base_view.py
   [iElectric]
 
+- Do not (silently) depent on p4a.common, but have the required timezone code bit locally
+  [miohtama]
+
 - make views subclass Products.Five.browser.BrowserView so that their templates
   can be customized through portal_view_customizations
   [swampmonkey]
