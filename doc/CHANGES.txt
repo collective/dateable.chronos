@@ -2,6 +2,12 @@
 dateable.chronos Changes
 =========================
 
+dateable.chronos 0.7.2.1 (2012-07-10)
+=====================================
+
+- include version.txt with distribution (added MANIFEST.in)
+  [iElectric]
+
 dateable.chronos 0.7.2 (2012-06-26)
 ===================================
 
