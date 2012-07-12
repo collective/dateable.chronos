@@ -1,2 +1,3 @@
 include *.cfg *.rst *.in *.txt
 graft dateable
+graft doc
