@@ -1,7 +1,7 @@
 dateable.chronos
 ================
 
-Dateable.chronos is a set of calendar views for Zope Toolkit applications.
+Dateable.chronos is a set of calendar views for Plone.
 
 Features
 --------
@@ -21,13 +21,7 @@ Requirements
 
 * dateable.kalends
 
-* A Zope Toolkit webframework (i.e. something using Zope 3 style views).
+* Plone.
 
-* It's currently developed as a part of Plone4ArtistsCalendar, and is likely
-  to currently be dependent on Plone. This is however not the long term 
-  intention, it's supposed to be useable for att ZTK calendaring needs.
-
-
-Use outside of Plone4ArtistsCalendar
-------------------------------------
-Contact Lennart Regebro <regebro@gmail.com> for more info.
+* It's currently developed as a part of p4a.plonecalendar, but should
+  be usable with other calendar integrations.
