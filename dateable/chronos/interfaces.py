@@ -1,14 +1,17 @@
 from zope import interface
 from zope import schema
 
+# Obsolete
 class IPossibleCalendar(interface.Interface):
     """A marker interface for representing what *could* be a calendar.
     """
 
+# Obsolete
 class ICalendarEnhanced(interface.Interface):
     """A marker interface to indicate an item that has calendar functionality.
     """
 
+# Obsolete
 class IListCalendarEnhanced(ICalendarEnhanced):
     """A marker interface to indicate an item that has calendar functionality
     and should use a list interface instead of a grid interface.
@@ -32,6 +35,7 @@ class IBasicCalendarSupport(interface.Interface):
                                   required=True,
                                   readonly=True)
 
+# Obsolete
 class ICalendarSupport(IBasicCalendarSupport):
     """Provides full information about calendar support.
     """

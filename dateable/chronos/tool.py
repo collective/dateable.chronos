@@ -3,8 +3,8 @@ try:
     from Products.Calendaring.tools.calendar import CalendarTool
 except ImportError:
     from Products.CMFPlone.CalendarTool import CalendarTool
-import interfaces
 import calendar
+from Products.CMFCore.interfaces import IFolderish
 
 # XXX Stop dependning on portal_calendar. Use a local utility instead.
 # (it can depend on portal_calendar, that's ok).
@@ -25,8 +25,8 @@ class ChronosCalendarTool(CalendarTool):
     
     security.declarePublic('isCalendar')
     def isCalendar(self, object):
-        """is object ICalendarEnchanced provider"""
-        return interfaces.ICalendarEnhanced.providedBy(object)
+        """Can object be used as a calendar?"""
+        return IFolderish.providedBy(object)
 
     security.declarePublic('getHoursToView')
     def getHoursToView(self):

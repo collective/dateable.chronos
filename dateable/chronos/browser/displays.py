@@ -1,7 +1,8 @@
+# Obsolete
 import sys
 from zope.interface import implements
 from zope.component import adapts
-from dateable.chronos.interfaces import ICalendarEnhanced
+from Products.CMFCore.interfaces import IFolderish
 
 if sys.version_info < (2, 6):
     # Plone 3
@@ -11,12 +12,10 @@ else:
     from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation as IDynamicallyViewable
 
 
-# XXX This seems to not be used. But it should be, I think.
-
 class CalendarDynamicViews(object):
     
     implements(IDynamicallyViewable)
-    adapts(ICalendarEnhanced)
+    adapts(IFolderish)
     
 
     def __init__(self, context):

@@ -12,13 +12,6 @@ from zope.contentprovider.interfaces import IContentProvider
 from zope.app.publisher.interfaces.browser import IBrowserMenu
 
 from Products.CMFCore.utils import getToolByName
-if sys.version_info < (2, 6):
-    # Plone 3
-    from Products.CMFDynamicViewFTI.interfaces import IDynamicallyViewable
-else:
-    # Plone 4
-    from Products.CMFDynamicViewFTI.interfaces import IDynamicViewTypeInformation as IDynamicallyViewable
-
 from dateable.chronos import utils
 from dateable.chronos.browser.interfaces import ICalendarView
 
@@ -58,6 +51,13 @@ MONTHS = [
           ]
 
 ONEDAY = datetime.timedelta(days=1)
+
+CALENDAR_VIEWS = (("day.html", "Day list"),
+                  ("week.html", "Week list"),
+                  ("month.html", "Month view"),
+                  ("list.html", "Event list"),
+                  ("past.html", "Event archive"),
+                  )
 
 def derive_ampmtime(timeobj):
     """Derives the 12 hour clock am/pm identifier and proper hour.
@@ -363,7 +363,7 @@ class BaseCalendarView(BrowserView):
                 actions[item.action] = item
         # Sort results from the default view:
         result = []
-        for action, title in IDynamicallyViewable(self.context).getAvailableLayouts():
+        for action, title in CALENDAR_VIEWS:
             if action in actions.keys():
                 result.append(actions[action])
                 del actions[action]

@@ -17,7 +17,7 @@
       />
 
   <browser:view
-      for="dateable.chronos.interfaces.IPossibleCalendar"
+      for="Products.CMFCore.interfaces.IFolderish"
       name="chronos_popup"
       class=".chronos_popup.ChronosPopup"
       permission="dateable.chronos.ViewContent"
@@ -25,14 +25,14 @@
     
   <browser:page
       name="calendar-config.html"
-      for="dateable.chronos.interfaces.IPossibleCalendar"
+      for="Products.CMFCore.interfaces.IFolderish"
       permission="dateable.chronos.ModifyContent"
       class=".config.ConfigView"
       />
       
   <browser:page
       name="month.html"
-      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      for="Products.CMFCore.interfaces.IFolderish"
       permission="dateable.chronos.ViewContent"
       class=".month.MonthView"
       template="month.pt"
@@ -40,7 +40,7 @@
 
   <browser:page
       name="week.html"
-      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      for="Products.CMFCore.interfaces.IFolderish"
       permission="dateable.chronos.ViewContent"
       class=".week.WeekView"
       template="week.pt"
@@ -48,7 +48,7 @@
       
   <browser:page
       name="day.html"
-      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      for="Products.CMFCore.interfaces.IFolderish"
       permission="dateable.chronos.ViewContent"
       class=".day.DayView"
       template="day.pt"
@@ -56,7 +56,7 @@
 
   <browser:page
       name="list.html"
-      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      for="Products.CMFCore.interfaces.IFolderish"
       permission="dateable.chronos.ViewContent"
       class=".events.EventListingView"
       attribute="upcomingEvents"
@@ -64,7 +64,7 @@
 
   <browser:page
       name="past.html"
-      for="dateable.chronos.interfaces.ICalendarEnhanced"
+      for="Products.CMFCore.interfaces.IFolderish"
       permission="dateable.chronos.ViewContent"
       class=".events.EventListingView"
       attribute="pastEvents"
@@ -72,7 +72,7 @@
 
   <browser:page
      name="chronos.css"
-     for="dateable.chronos.interfaces.ICalendarEnhanced"
+     for="Products.CMFCore.interfaces.IFolderish"
      permission="dateable.chronos.ViewContent"
      class=".styles.ChronosStyle"
      template="resources/chronos.css"
@@ -117,16 +117,13 @@
     
 
   <!-- Menu items -->
-  <adapter 
-    factory=".displays.CalendarDynamicViews"
-    />
-
+  
   <browser:menu id="chronos_views" />
 
   <browser:menuItem
     menu="chronos_views"
     title="Day"
-    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    for="Products.CMFCore.interfaces.IFolderish"
     action="day.html"
     permission="dateable.chronos.ViewContent"
     />
@@ -134,7 +131,7 @@
   <browser:menuItem
     menu="chronos_views"
     title="Week"
-    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    for="Products.CMFCore.interfaces.IFolderish"
     action="week.html"
     permission="dateable.chronos.ViewContent"
     />
@@ -142,7 +139,7 @@
   <browser:menuItem
     menu="chronos_views"
     title="Month"
-    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    for="Products.CMFCore.interfaces.IFolderish"
     action="month.html"
     permission="dateable.chronos.ViewContent"
     />
@@ -150,7 +147,7 @@
   <browser:menuItem
     menu="chronos_views"
     title="List"
-    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    for="Products.CMFCore.interfaces.IFolderish"
     action="list.html"
     permission="dateable.chronos.ViewContent"
     />
@@ -158,7 +155,7 @@
   <browser:menuItem
     menu="chronos_views"
     title="Past"
-    for="dateable.chronos.interfaces.ICalendarEnhanced"
+    for="Products.CMFCore.interfaces.IFolderish"
     action="past.html"
     permission="dateable.chronos.ViewContent"
     />
@@ -185,7 +182,7 @@
     />
 
   <browser:page
-      for="dateable.chronos.interfaces.IPossibleCalendar"
+      for="Products.CMFCore.interfaces.IFolderish"
       name="kssNavigationChange"
       class=".thumbnail.NavigationView"
       attribute="navigationChange"
