@@ -4,7 +4,7 @@ f = open('dateable/chronos/version.txt')
 version = f.read().strip()
 f.close()
 
-f = open('doc/README.txt')
+f = open('README.txt')
 readme = f.read()
 f.close()
 

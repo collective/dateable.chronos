@@ -23,5 +23,6 @@ Requirements
 
 * Plone.
 
-* It's currently developed as a part of p4a.plonecalendar, but should
-  be usable with other calendar integrations.
+* It's currently developed as a part of p4a.plonecalendar, but is in theory
+  usable with other integrations with Plone.
+  
