@@ -2,13 +2,15 @@
 dateable.chronos Changes
 =========================
 
-dateable.chronos 0.8 (Unreleased)
-=================================
+0.8 (2012-08-04)
+================
 
 - The views are now normal views for Plone Folderish things. This is so we
   can get rid of p4a.subtyper dependencies p4a.plonecalendar. This means
   dateable.chronos now is dependant on Plone, but afaik it's only used in
-  Plone anyway.
+  Plone anyway. [regebro]
+  
+- Got rid of version.txt and MANIFEST.in [regebro]
 
 dateable.chronos 0.7.2.2 (2012-07-10)
 =====================================
