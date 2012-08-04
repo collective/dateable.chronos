@@ -3,7 +3,7 @@ dateable.chronos Changes
 =========================
 
 dateable.chronos 0.8 (Unreleased)
-=====================================
+=================================
 
 - The views are now normal views for Plone Folderish things. This is so we
   can get rid of p4a.subtyper dependencies p4a.plonecalendar. This means

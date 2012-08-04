@@ -1,8 +1,6 @@
 from setuptools import setup, find_packages
 
-f = open('dateable/chronos/version.txt')
-version = f.read().strip()
-f.close()
+version = '0.8'
 
 f = open('README.txt')
 readme = f.read()
