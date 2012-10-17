@@ -5,7 +5,9 @@ dateable.chronos Changes
 0.8.1 (unreleased)
 ==================
 
-- Nothing changed yet.
+- Include zope.security zcml instead of defining the
+  zope.ManageContent permission ourselves.
+  [maurits]
 
 
 0.8 (2012-08-04)

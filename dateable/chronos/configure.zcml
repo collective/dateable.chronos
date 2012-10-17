@@ -6,10 +6,7 @@
 
   <i18n:registerTranslations directory="locales" />
   
-  <permission
-      id="zope.ManageContent"
-      title="Manage content"
-      />
+  <include package="zope.security" />
 
   <permission
       id="dateable.chronos.ModifyContent"
