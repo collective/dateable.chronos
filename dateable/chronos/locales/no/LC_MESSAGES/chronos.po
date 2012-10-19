@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: chronos\n"
 "POT-Creation-Date: 2009-06-28 11:21+0000\n"
-"PO-Revision-Date: 2009-06-08 12:00+0200\n"
-"Last-Translator: Mats Tande <mats@tande.net>\n"
+"PO-Revision-Date: 2012-10-19 12:00+0200\n"
+"Last-Translator: Morten W. Petersen <morten@nidelven-it.no>\n"
 "Language-Team: Plone developers <plone-developers@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Type: text/plain; charset=utf8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language-Code: no\n"
 "Language-Name: Norsk\n"
-"Preferred-Encodings: latin9\n"
+"Preferred-Encodings: utf8\n"
 "Domain: chronos\n"
 
 # Really short date (for strftime)
@@ -58,7 +58,7 @@ msgid "List"
 msgstr "Liste"
 
 msgid "Month"
-msgstr "Måned"
+msgstr "MÃ¥ned"
 
 #. Default: "More..."
 #: ./browser/month.pt:105
@@ -98,7 +98,7 @@ msgstr "Uker"
 #. Default: "Year"
 #: ./browser/weekyear.pt:9
 msgid "Year"
-msgstr "År"
+msgstr "Ã…r"
 
 # Short week days, i e Mo, Tu, We etc. 0 = Monday
 msgid "calendar_day_0"
@@ -117,10 +117,10 @@ msgid "calendar_day_4"
 msgstr "Fre"
 
 msgid "calendar_day_5"
-msgstr "Lør"
+msgstr "LÃ¸r"
 
 msgid "calendar_day_6"
-msgstr "Søn"
+msgstr "SÃ¸n"
 
 # These are the messages that are not found by i18ndude. Typically because they
 # are generated.
