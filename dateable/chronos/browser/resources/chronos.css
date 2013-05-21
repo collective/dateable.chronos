@@ -116,6 +116,8 @@ a.addEventShortcut {
 
 #calendar-view-tabs li {
     display: inline;
+    margin-bottom: 0;
+    line-height: normal;
 }
 
 #calendar-view-tabs li a {
@@ -159,10 +161,14 @@ a.addEventShortcut {
 div.chronos-popup-calendar {
     position: absolute;
     z-index: 5;
-    font-size: 91%;
+    font-size: 116%;
     left: 0;
     height: 0;
     width: 0;
+}
+
+#content div.chronos-popup-calendar dd {
+  margin: 0;
 }
 
 div.hidden {
