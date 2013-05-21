@@ -1,0 +1,13 @@
+include *.txt
+recursive-include dateable *.css
+recursive-include dateable *.gif
+recursive-include dateable *.png
+recursive-include dateable *.po
+recursive-include dateable *.pot
+recursive-include dateable *.pt
+recursive-include dateable *.xml
+recursive-include dateable *.zcml
+recursive-include dateable *.cpt
+recursive-include dateable *.cpy
+recursive-include dateable *.metadata
+recursive-include doc *.txt
