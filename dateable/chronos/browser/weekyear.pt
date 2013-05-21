@@ -1,5 +1,5 @@
-<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
-<body metal:fill-slot="body" tal:define="numcolumns python:4">
+<html metal:use-macro="context/main_template/macros/master"  i18n:domain="chronos">
+<body metal:fill-slot="main" tal:define="numcolumns python:4">
   <h2>
     <a class="prevnext"
       tal:attributes="href python:'../' + str(context.getYear() -1)">

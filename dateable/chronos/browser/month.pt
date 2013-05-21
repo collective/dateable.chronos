@@ -1,28 +1,10 @@
-<html metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+<html metal:use-macro="context/main_template/macros/master"  i18n:domain="chronos">
 <metal:block fill-slot="style_slot">
     <style type="text/css" media="all" 
         tal:content="string:@import url(${context/absolute_url}/chronos.css);" />
 </metal:block>
 
-<metal:block fill-slot="body" tal:define="dummy view/calcInfo">
-
-<div tal:replace="structure provider:plone.abovecontenttitle" />
-
-<h1 class="documentFirstHeading"> 
-    <metal:field use-macro="python:here.widget('title', mode='view')">
-    Title
-    </metal:field>
-</h1>
-
-<div tal:replace="structure provider:plone.belowcontenttitle" />
-
-<p class="documentDescription">
-    <metal:field use-macro="python:here.widget('description', mode='view')">
-    Description
-    </metal:field>
-</p>
-
-<div tal:replace="structure provider:plone.abovecontentbody" />
+<metal:block fill-slot="content-core" tal:define="dummy view/calcInfo">
 
 <div id="chronos-calendar">
     <!-- The calendar, rendered as a table -->
@@ -115,7 +97,6 @@
         </tbody>
     </table>
 </div>
-<div tal:replace="structure provider:plone.belowcontentbody" />
 
 </metal:block>
 </html>

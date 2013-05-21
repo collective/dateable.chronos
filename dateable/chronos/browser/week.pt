@@ -2,7 +2,8 @@
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
-    metal:use-macro="context/@@standard_macros/page" i18n:domain="chronos">
+    metal:use-macro="context/main_template/macros/master" 
+    i18n:domain="chronos">
 <head>
   <metal:block fill-slot="style_slot">
       <style type="text/css" media="all" 
@@ -10,26 +11,9 @@
       </style>
   </metal:block>
 </head>
+
 <body>
-  <metal:block metal:fill-slot="body" tal:define="dummy view/calcInfo">
-  
-  <div tal:replace="structure provider:plone.abovecontenttitle" />
-  
-  <h1 class="documentFirstHeading"> 
-      <metal:field use-macro="python:here.widget('title', mode='view')">
-      Title
-      </metal:field>
-  </h1>
-  
-  <div tal:replace="structure provider:plone.belowcontenttitle" />
-  
-  <p class="documentDescription">
-      <metal:field use-macro="python:here.widget('description', mode='view')">
-      Description
-      </metal:field>
-  </p>
-  
-  <div tal:replace="structure provider:plone.abovecontentbody" />
+  <metal:block fill-slot="content-core" tal:define="dummy view/calcInfo">  
 
   <div id="chronos-calendar">
     <!-- The calendar, rendered as a table -->
@@ -135,7 +119,6 @@
       </table>
     </metal:block>
     </div>
-    <div tal:replace="structure provider:plone.belowcontentbody" />
   </metal:block>
   </body>
 </html>

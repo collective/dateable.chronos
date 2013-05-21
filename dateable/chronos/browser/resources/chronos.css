@@ -8,7 +8,7 @@
 }
 
 #chronos-calendar table { 
-  border: 1px solid #8CACBB;
+  border: <tal:block replace="string:${base_properties/borderWidth} ${base_properties/borderStyle} ${base_properties/globalBorderColor}" />;
 }
 
 #chronos-calendar th {
@@ -16,6 +16,10 @@
     font-weight:normal;
     line-height:1.6em;
     text-align:center;
+}
+
+#content #chronos-calendar a {
+    border-bottom: none;
 }
 
 #chronos-calendar a {
@@ -131,9 +135,11 @@ a.addEventShortcut {
 #calendar-view-tabs li.selected a {
     /* The selected tab. There's only one of this */
     background-color: <tal:block replace="base_properties/globalBackgroundColor" />;
-    border: <tal:block replace="string:${base_properties/borderWidth} ${base_properties/borderStyle} ${base_properties/globalBorderColor}" />;
+    border: <tal:block replace="string:${base_properties/borderWidth} ${base_properties/borderStyle} ${base_properties/globalBorderColor}" /> ;
     border-bottom: <tal:block replace="string:${base_properties/globalBackgroundColor} ${base_properties/borderWidth} ${base_properties/borderStyle}" />;
     color: <tal:block replace="base_properties/globalFontColor" />;
+    /* Fix bottom margin on tabs in IE */
+    position: relative;
 }
 
 #calendar-view-tabs li a:hover {
@@ -143,20 +149,20 @@ a.addEventShortcut {
     color: <tal:block replace="base_properties/globalFontColor" />;
 }
 
-/* Fix bottom margin on tabs in IE */
-#calendar-view-tabs li.selected a {
-	position: relative;
-}
-
 /* Month popup */
 
-div.chronos-popup-calendar {
+.chronosPopupCalendarContainer {
     position: relative;
+    left: 1em;
+}
+
+div.chronos-popup-calendar {
+    position: absolute;
     z-index: 5;
     font-size: 91%;
-    left: 300px;
-    height: 0px;
-    width: 0px;
+    left: 0;
+    height: 0;
+    width: 0;
 }
 
 div.hidden {
@@ -165,6 +171,7 @@ div.hidden {
  
 dl#calendar-navigation {
     width: 14em;
+    background: white;
 }
 
 /* Navigation tabs */

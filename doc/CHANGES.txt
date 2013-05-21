@@ -9,6 +9,9 @@ dateable.chronos Changes
   zope.ManageContent permission ourselves.
   [maurits]
 
+- Plone 4.3 compatibility. [regebro]
+
+- CSS fixes, and template cleanup. [regebro]
 
 0.8 (2012-08-04)
 ================
