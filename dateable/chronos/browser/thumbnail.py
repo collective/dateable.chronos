@@ -5,8 +5,6 @@ from zope.component import getMultiAdapter
 from zope.i18nmessageid import MessageFactory
 from zope.viewlet.interfaces import IViewlet, IViewletManager
 
-from kss.core import KSSView, kssaction
-
 from Acquisition import aq_inner
 
 from Products.PythonScripts.standard import url_quote_plus
@@ -16,25 +14,6 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 
 PLMF = MessageFactory('plonelocales')
-
-class NavigationView(KSSView):
-
-    @kssaction
-    def navigationChange(self, month, year, viewname):
-        core = self.getCommandSet('core')
-        manager = getMultiAdapter((core.context, core.request, core.view,),
-                                  IViewletManager, name='chronos.navigation')
-        renderer = getMultiAdapter(
-            (core.context, core.request, core.view, manager),
-            IViewlet,
-            name='chronos.ajaxnavigation'
-        )
-        renderer = renderer.__of__(self.context)
-        renderer.update(int(month), int(year), viewname)
-
-        result = renderer.render()
-        core.replaceInnerHTML('#chronosPopupCalendar', result)
-
 
 # This is a mildly modified copy of the standard plone calendar portlet:
 class ThumbnailMonth(BrowserView):
@@ -97,7 +76,7 @@ class ThumbnailMonth(BrowserView):
                 if daynumber == 0:
                     continue
                 day['is_today'] = self.isToday(daynumber)
-                day['date_string'] = '%s-%s-%s' % (year, month, daynumber)
+                day['date_string'] = '%04i-%02i-%02i' % (year, month, daynumber)
         return weeks
 
     def getEventString(self, event):

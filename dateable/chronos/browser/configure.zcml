@@ -175,18 +175,5 @@
       class=".thumbnail.ThumbnailMonth"
       permission="dateable.chronos.ViewContent"
       />
-      
-  <browser:resource
-    file="navigation.kss"
-    name="navigation.kss"
-    />
-
-  <browser:page
-      for="dateable.chronos.interfaces.IPossibleCalendar"
-      name="kssNavigationChange"
-      class=".thumbnail.NavigationView"
-      attribute="navigationChange"
-      permission="dateable.chronos.ViewContent"
-      />
-    
+          
 </configure>

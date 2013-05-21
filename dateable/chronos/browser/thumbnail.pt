@@ -15,10 +15,10 @@
            title="Previous month"
            tal:define="prevMonthMonth view/prevMonthMonth;
                        prevMonthYear view/prevMonthYear"
-           tal:attributes="id python:showPrevMonth and 'calendar-previous' or '';
-                           class string:kssNavigationChange kssattr-year-${prevMonthYear} kssattr-month-${prevMonthMonth} kssattr-viewname-${view/viewname} calendarPrevious;"
+           tal:attributes="id python:showPrevMonth and 'calendar-previous' or '';"
            tal:condition="showPrevMonth"
-           i18n:attributes="title title_previous_month;">&laquo;</a>
+           i18n:attributes="title title_previous_month;"
+           class="calendarPrevious">&laquo;</a>
 
         <span i18n:translate="" tal:omit-tag="">
             <span i18n:name="monthname"
@@ -33,10 +33,10 @@
            title="Next month"
            tal:define="nextMonthMonth view/nextMonthMonth;
                        nextMonthYear view/nextMonthYear"
-           tal:attributes="id python:showNextMonth and 'calendar-next' or '';
-                           class string:kssNavigationChange kssattr-year-${nextMonthYear} kssattr-month-${nextMonthMonth} kssattr-viewname-${view/viewname} calendarNext;"
+           tal:attributes="id python:showNextMonth and 'calendar-next' or '';"
            tal:condition="showNextMonth"
-           i18n:attributes="title title_next_month;">&raquo;</a>
+           i18n:attributes="title title_next_month;"
+           class="calendarNext">&raquo;</a>
         <span class="portletTopRight"></span>
     </dt>
 
