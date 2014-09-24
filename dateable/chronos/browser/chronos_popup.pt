@@ -6,7 +6,7 @@
 <body>
 
 <span metal:define-macro="calendar" class="chronosPopupCalendarContainer">
-    <img class="navigationIcon" src="#" tal:attributes="src string:${context/++resource++chronos_support/calendar_icon.gif}" 
+    <img class="navigationIcon" src="#" tal:attributes="src string:${context/portal_url}/++resource++chronos_support/calendar_icon.gif" 
         onclick="$('#chronosPopupCalendar').toggleClass('hidden');"/>
     <div  class="chronos-popup-calendar hidden" id="chronosPopupCalendar" tal:content="structure provider:chronos.navigation" />
 </span>
